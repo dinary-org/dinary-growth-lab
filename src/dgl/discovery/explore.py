@@ -99,6 +99,9 @@ class QueryPlanner:
         for a in ucb[: n_explore - n_rand]:
             chosen.append((a.term, "explore"))
         probes = NEUTRAL_PROBES.get(lang, NEUTRAL_PROBES["en"])
-        for _ in range(n_rand + (n_queries - len(chosen) - n_rand)):
-            chosen.append((self.rng.choice(probes), "random"))
+        # sample without replacement: a repeated probe re-spends quota on the same results
+        used = {t for t, _ in chosen}
+        fresh = [p for p in probes if p not in used]
+        for p in self.rng.sample(fresh, min(len(fresh), n_queries - len(chosen))):
+            chosen.append((p, "random"))
         return chosen[:n_queries]

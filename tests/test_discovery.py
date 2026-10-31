@@ -45,3 +45,9 @@ def test_planner_reserves_exploration_and_learns_from_corpus():
 def test_planner_cold_start_is_pure_exploration():
     plan = QueryPlanner(seed=0).plan(4, "ko")
     assert all(r == "random" for _, r in plan)
+
+
+def test_planner_never_repeats_a_term():
+    for seed in range(20):
+        plan = QueryPlanner(seed=seed).plan(8, "ko")
+        assert len({t for t, _ in plan}) == len(plan)
