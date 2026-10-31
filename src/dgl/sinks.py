@@ -80,14 +80,14 @@ class R2Sink:
     """Uploads files to Cloudflare R2 through its S3-compatible endpoint."""
 
     def __init__(self, s: Settings):
-        if not (s.r2_account_id and s.r2_access_key_id and s.r2_secret_access_key):
-            raise RuntimeError("R2_ACCOUNT_ID, R2_ACCESS_KEY_ID and R2_SECRET_ACCESS_KEY are required")
+        if not (s.r2_endpoint_url and s.r2_access_key_id and s.r2_secret_access_key):
+            raise RuntimeError("R2_ENDPOINT (or R2_ACCOUNT_ID), R2_ACCESS_KEY_ID and R2_SECRET_ACCESS_KEY are required")
         import boto3  # optional dependency
 
         self.bucket = s.r2_bucket
         self.s3 = boto3.client(
             "s3",
-            endpoint_url=f"https://{s.r2_account_id}.r2.cloudflarestorage.com",
+            endpoint_url=s.r2_endpoint_url,
             aws_access_key_id=s.r2_access_key_id,
             aws_secret_access_key=s.r2_secret_access_key,
             region_name="auto",

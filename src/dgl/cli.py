@@ -167,7 +167,7 @@ def cmd_approve(a, s):
     if not loads(p["qc"], {}).get("pass"):
         sys.exit("QC has not passed; refusing approval")
     storage = p["storage_url"]
-    if s.r2_account_id and not storage:
+    if s.r2_endpoint_url and not storage:
         from .sinks import R2Sink
         storage = R2Sink(s).put(Path(p["video_path"]), f"productions/{a.production_id}.mp4")
     st.upsert("productions", {**p, "status": "approved", "approved_by": a.by, "approved_at": now_iso(),

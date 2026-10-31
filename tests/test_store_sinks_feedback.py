@@ -88,3 +88,16 @@ def test_supabase_pull_restores_without_requeue(store, monkeypatch):
     assert counts == {"videos": 1, "video_snapshots": 0}
     assert store.query("SELECT video_id FROM videos") == [{"video_id": "a"}]
     assert store.pending_sync() == []
+
+
+def test_settings_accept_provider_variable_names(monkeypatch):
+    for k in ("SUPABASE_SERVICE_ROLE_KEY", "R2_ACCOUNT_ID", "R2_BUCKET"):
+        monkeypatch.delenv(k, raising=False)
+    monkeypatch.setenv("SUPABASE_SECRET_KEY", "sb_secret_x")
+    monkeypatch.setenv("R2_ENDPOINT", "https://abc.r2.cloudflarestorage.com/")
+    monkeypatch.setenv("R2_BUCKET_NAME", "media")
+    s = Settings()
+    assert s.supabase_key == "sb_secret_x"
+    assert s.r2_endpoint_url == "https://abc.r2.cloudflarestorage.com" and s.r2_bucket == "media"
+    monkeypatch.setenv("SUPABASE_SERVICE_ROLE_KEY", "legacy")
+    assert Settings().supabase_key == "legacy"  # explicit name wins

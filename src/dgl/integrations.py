@@ -53,7 +53,7 @@ def check_apify(s: Settings) -> tuple[str, str]:
 
 def check_supabase(s: Settings) -> tuple[str, str]:
     if not (s.supabase_url and s.supabase_key):
-        return "BLOCKED", "SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY not set (schema can still be applied via MCP)"
+        return "BLOCKED", "SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY (or SUPABASE_SECRET_KEY) not set (schema can still be applied via MCP)"
     try:
         Client("supabase", max_retries=1).request("GET", f"{s.supabase_url}/rest/v1/integration_checks", params={"limit": 1},
                                                    headers={"apikey": s.supabase_key, "Authorization": f"Bearer {s.supabase_key}",
@@ -64,9 +64,8 @@ def check_supabase(s: Settings) -> tuple[str, str]:
 
 
 def check_r2(s: Settings) -> tuple[str, str]:
-    if not s.r2_account_id:
-        ok, why = _probe_host("https://r2.cloudflarestorage.com")
-        return "BLOCKED", f"R2 credentials not set; r2.cloudflarestorage.com {why}"
+    if not (s.r2_endpoint_url and s.r2_access_key_id):
+        return "BLOCKED", "R2_ENDPOINT (or R2_ACCOUNT_ID) / R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY not set"
     try:
         from .sinks import R2Sink
         R2Sink(s).s3.head_bucket(Bucket=s.r2_bucket)
