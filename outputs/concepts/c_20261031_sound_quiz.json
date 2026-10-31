@@ -1,0 +1,137 @@
+{
+  "concept_id": "c_20261031_sound_quiz",
+  "opportunity_id": "opp_provisional_secondary_02",
+  "title_ko": "3초 안에 맞히면 한국 사람",
+  "logline_en": "An audio-first guessing game: everyday Korean sounds on a black screen with a countdown; the answer card appears only after the timer, inviting comments.",
+  "evidence": [
+    {
+      "ref": "secondary:sec_ig_shares_saves",
+      "kind": "secondary",
+      "claim": "Guide claims DM shares/saves/comments signal more than likes on Reels."
+    },
+    {
+      "ref": "secondary:sec_shorts_loops_length",
+      "kind": "secondary",
+      "claim": "Short runtimes and replays reported as important."
+    }
+  ],
+  "measured_facts": [],
+  "hypotheses": [
+    "H1: A participatory countdown increases comment rate relative to our account median.",
+    "H2: Culturally specific sounds increase sharing among Korean viewers more than among international viewers (compare KR vs non-KR share of views)."
+  ],
+  "why_now": "PROVISIONAL: no platform-measured candidates could be collected in this session (YouTube key missing, Instagram/Apify hosts blocked); evidence below is secondary and unverified. Re-rank against measured clusters before production spend. Tests a participation mechanic that does not depend on any trending audio.",
+  "creative_principle": "Withhold the visual answer behind a short timer so the viewer commits to a guess, then reward them; the comment section becomes the scoreboard.",
+  "originality_notes": "All sounds are recorded by us from objects we own or public places where recording is permitted; no platform sounds, jingles or branded voice prompts are used.",
+  "format": "audio quiz, black screen + waveform + countdown, answer reveal cards",
+  "duration_s": 30.0,
+  "hooks_ko": [
+    "이 소리 3초 안에 맞히면 한국 사람",
+    "5개 다 맞히면 상위 1%",
+    "소리만 듣고 맞혀봐 (이어폰 필수)"
+  ],
+  "script_ko": [
+    {
+      "t": 0.0,
+      "speaker": "자막",
+      "line_ko": "이어폰 끼고. 3초 안에 맞혀 보세요."
+    },
+    {
+      "t": 3.0,
+      "speaker": "효과음",
+      "line_ko": "(소리 1)"
+    },
+    {
+      "t": 6.5,
+      "speaker": "자막",
+      "line_ko": "정답 공개."
+    },
+    {
+      "t": 27.0,
+      "speaker": "자막",
+      "line_ko": "몇 개 맞혔는지 댓글로."
+    }
+  ],
+  "storyboard": [
+    {
+      "scene": 1,
+      "start_s": 0.0,
+      "end_s": 3.0,
+      "visual": "Black screen, title + headphone icon",
+      "on_screen_text_ko": "이어폰 필수 🎧 3초 안에 맞히기",
+      "audio": "silence then beep",
+      "edit": "static"
+    },
+    {
+      "scene": 2,
+      "start_s": 3.0,
+      "end_s": 7.8,
+      "visual": "Waveform + 3-2-1 countdown, then answer card",
+      "on_screen_text_ko": "1번 / 정답",
+      "audio": "recorded sound 1",
+      "edit": "reveal wipe"
+    },
+    {
+      "scene": 3,
+      "start_s": 7.8,
+      "end_s": 12.6,
+      "visual": "same pattern",
+      "on_screen_text_ko": "2번 / 정답",
+      "audio": "sound 2",
+      "edit": "reveal wipe"
+    },
+    {
+      "scene": 4,
+      "start_s": 12.6,
+      "end_s": 17.4,
+      "visual": "same pattern",
+      "on_screen_text_ko": "3번 / 정답",
+      "audio": "sound 3",
+      "edit": "reveal wipe"
+    },
+    {
+      "scene": 5,
+      "start_s": 17.4,
+      "end_s": 22.2,
+      "visual": "same pattern",
+      "on_screen_text_ko": "4번 / 정답",
+      "audio": "sound 4",
+      "edit": "reveal wipe"
+    },
+    {
+      "scene": 6,
+      "start_s": 22.2,
+      "end_s": 27.0,
+      "visual": "hardest one, longer countdown",
+      "on_screen_text_ko": "5번 (고난도)",
+      "audio": "sound 5",
+      "edit": "reveal wipe"
+    },
+    {
+      "scene": 7,
+      "start_s": 27.0,
+      "end_s": 30.0,
+      "visual": "Score card",
+      "on_screen_text_ko": "몇 개 맞혔어요? 댓글로",
+      "audio": "ding",
+      "edit": "card"
+    }
+  ],
+  "edit_plan": "Fixed 4.8 s rhythm per question so the pattern is learned by question 2; last question breaks the rhythm.",
+  "audio_plan": "Clean field recordings (phone + windscreen), each normalised to -16 LUFS; countdown ticks synthesized; master -14 LUFS.",
+  "assets_required": [
+    {
+      "asset": "5 everyday sound recordings",
+      "source": "recorded by team",
+      "license": "original"
+    }
+  ],
+  "difficulty": "low",
+  "est_cost_usd": 0.0,
+  "est_hours": 3.0,
+  "success_metric": "Comment rate ≥ 2× account median; ≥ 30% of comments state a score.",
+  "risks": [
+    "Recording in shops or transit may need permission",
+    "Sounds may be too ambiguous without testing on 3–5 people first"
+  ]
+}

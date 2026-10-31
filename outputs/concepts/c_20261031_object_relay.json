@@ -1,0 +1,123 @@
+{
+  "concept_id": "c_20261031_object_relay",
+  "opportunity_id": "opp_provisional_secondary_03",
+  "title_ko": "이 컵이 하루 동안 지나간 곳",
+  "logline_en": "One ordinary object is passed hand-to-hand through six places in one day; every hand-off is a whip-pan match cut, so the object never leaves the centre of frame.",
+  "evidence": [
+    {
+      "ref": "secondary:sec_later_2026_10",
+      "kind": "secondary",
+      "claim": "Third-party roundup reports transition-driven swap formats (spinning-fan outfit swap) trending on Reels in Oct 2026."
+    }
+  ],
+  "measured_facts": [],
+  "hypotheses": [
+    "H1: Continuous-object match cuts keep viewers past the 3-second mark at a higher rate than our static-opening videos.",
+    "H2: Viewers rewatch to work out how each transition was done (avg view % > 90%)."
+  ],
+  "why_now": "PROVISIONAL: no platform-measured candidates could be collected in this session (YouTube key missing, Instagram/Apify hosts blocked); evidence below is secondary and unverified. Re-rank against measured clusters before production spend. Transfers the reported 'transition as payoff' mechanic to a non-fashion subject, where saturation is presumably lower (to be measured).",
+  "creative_principle": "Make the edit itself the spectacle: one anchored subject, many worlds, each cut a small magic trick.",
+  "originality_notes": "Only the abstract mechanic (match-cut swap) is borrowed; the subject, locations, people and music are our own.",
+  "format": "live-action match-cut relay, no dialogue, captions as place labels",
+  "duration_s": 18.0,
+  "hooks_ko": [
+    "이 컵 하나로 서울 한 바퀴",
+    "컵을 넘길 때마다 장소가 바뀜",
+    "마지막 사람 누군지 맞혀봐"
+  ],
+  "script_ko": [
+    {
+      "t": 0.0,
+      "speaker": "자막",
+      "line_ko": "오전 8시, 집"
+    },
+    {
+      "t": 3.0,
+      "speaker": "자막",
+      "line_ko": "오전 10시, 회사"
+    },
+    {
+      "t": 15.0,
+      "speaker": "자막",
+      "line_ko": "밤 11시, 다시 집"
+    }
+  ],
+  "storyboard": [
+    {
+      "scene": 1,
+      "start_s": 0.0,
+      "end_s": 3.0,
+      "visual": "Hand holds cup to camera at home",
+      "on_screen_text_ko": "오전 8시 · 집",
+      "audio": "beat drop",
+      "edit": "whip pan right"
+    },
+    {
+      "scene": 2,
+      "start_s": 3.0,
+      "end_s": 6.0,
+      "visual": "Different hand receives cup, office",
+      "on_screen_text_ko": "오전 10시 · 회사",
+      "audio": "beat",
+      "edit": "whip pan"
+    },
+    {
+      "scene": 3,
+      "start_s": 6.0,
+      "end_s": 9.0,
+      "visual": "Cafe",
+      "on_screen_text_ko": "오후 1시 · 카페",
+      "audio": "beat",
+      "edit": "whip pan"
+    },
+    {
+      "scene": 4,
+      "start_s": 9.0,
+      "end_s": 12.0,
+      "visual": "Park",
+      "on_screen_text_ko": "오후 4시 · 공원",
+      "audio": "beat",
+      "edit": "whip pan"
+    },
+    {
+      "scene": 5,
+      "start_s": 12.0,
+      "end_s": 15.0,
+      "visual": "Bus stop at dusk",
+      "on_screen_text_ko": "오후 7시 · 정류장",
+      "audio": "beat",
+      "edit": "whip pan"
+    },
+    {
+      "scene": 6,
+      "start_s": 15.0,
+      "end_s": 18.0,
+      "visual": "Back home; first hand receives it — loop",
+      "on_screen_text_ko": "밤 11시 · 다시 집",
+      "audio": "final hit",
+      "edit": "whip pan to frame-0 match"
+    }
+  ],
+  "edit_plan": "Shoot each hand-off as two halves of a whip pan at the same speed and direction; cut at peak motion blur.",
+  "audio_plan": "Original or licensed 120 BPM track; cuts on downbeats.",
+  "assets_required": [
+    {
+      "asset": "6 locations, 6 participants",
+      "source": "team + friends with signed releases",
+      "license": "model releases"
+    },
+    {
+      "asset": "Music",
+      "source": "commissioned or royalty-free library with commercial social licence",
+      "license": "to be confirmed"
+    }
+  ],
+  "difficulty": "medium",
+  "est_cost_usd": 30.0,
+  "est_hours": 8.0,
+  "success_metric": "3-second hold rate above account median; avg view % ≥ 90%.",
+  "risks": [
+    "Location filming permissions",
+    "Transitions look cheap if whip speeds do not match"
+  ]
+}

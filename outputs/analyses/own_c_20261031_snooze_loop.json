@@ -1,0 +1,378 @@
+{
+  "analysis_id": "an_20261031_25512fca",
+  "access_level": "full_av",
+  "rights_basis": "own production (DINARY Growth Lab render, all assets original)",
+  "media": {
+    "duration_s": 24.0,
+    "container_duration_s": 24.1,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "has_audio": true,
+    "bitrate": 861270
+  },
+  "transcript": {
+    "source": "sidecar_srt",
+    "note": "creator-supplied captions",
+    "cues": [
+      {
+        "start": 0.08,
+        "end": 1.9769999999999999,
+        "text": "일곱 시. 알람이 울린다."
+      },
+      {
+        "start": 2.48,
+        "end": 3.725,
+        "text": "딱 오 분만 더."
+      },
+      {
+        "start": 5.08,
+        "end": 7.064,
+        "text": "괜찮아. 아직 여유 있어."
+      },
+      {
+        "start": 7.48,
+        "end": 9.588,
+        "text": "오 분만 더. 진짜 마지막."
+      },
+      {
+        "start": 9.88,
+        "end": 11.592,
+        "text": "이번엔 알람도 못 들었다."
+      },
+      {
+        "start": 12.08,
+        "end": 14.387,
+        "text": "잠깐. 일곱 시 오십이 분?"
+      },
+      {
+        "start": 14.68,
+        "end": 16.961,
+        "text": "양치하면서 세수하고 옷까지."
+      },
+      {
+        "start": 17.68,
+        "end": 19.835,
+        "text": "교훈. 내일은 진짜 일찍"
+      },
+      {
+        "start": 19.835,
+        "end": 20.332,
+        "text": "잔다."
+      },
+      {
+        "start": 20.48,
+        "end": 22.764,
+        "text": "그날 밤 열한 시 오십팔 분."
+      },
+      {
+        "start": 22.68,
+        "end": 23.585,
+        "text": "일곱 시."
+      }
+    ]
+  },
+  "frames": [
+    {
+      "t": 0.0,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0000.00.png",
+      "ocr": "알람 오늘은 진짜 일찍 일어난다",
+      "brightness": 0.153,
+      "saturation": 0.736
+    },
+    {
+      "t": 0.5,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0000.50.png",
+      "ocr": "알람 오늘은 진짜 일찍 일어난다 일곱 시. 알람이 울린다.",
+      "brightness": 0.184,
+      "saturation": 0.705
+    },
+    {
+      "t": 1.0,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0001.00.png",
+      "ocr": "알람 0 7 0 0 오늘은 진짜 일찍 일어난다 일곱 시. 알람이 울린다.",
+      "brightness": 0.185,
+      "saturation": 0.704
+    },
+    {
+      "t": 1.2,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0001.20.png",
+      "ocr": "알람 0 0 0 오늘은 진짜 일찍 일어난다 일곱 시. 알람이 울린다.",
+      "brightness": 0.185,
+      "saturation": 0.704
+    },
+    {
+      "t": 2.0,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0002.00.png",
+      "ocr": "알람 0 0 오늘은 진짜 일찍 일어난다 드",
+      "brightness": 0.184,
+      "saturation": 0.709
+    },
+    {
+      "t": 3.0,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0003.00.png",
+      "ocr": "스누즈 1 딱 5분만… 딱 오 분만 더.",
+      "brightness": 0.213,
+      "saturation": 0.696
+    },
+    {
+      "t": 3.7,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0003.70.png",
+      "ocr": "스누즈 1 0 7 0 1 딱 5분만… 딱 오 분만 더.",
+      "brightness": 0.215,
+      "saturation": 0.695
+    },
+    {
+      "t": 6.2,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0006.20.png",
+      "ocr": "스누즈2 7 아직 여유 있음 괜찮아. 아직 여유 있어.",
+      "brightness": 0.258,
+      "saturation": 0.518
+    },
+    {
+      "t": 8.6,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0008.60.png",
+      "ocr": "스누즈 3 7 진짜 마지막 오 분만 더. 진짜 마지막.",
+      "brightness": 0.301,
+      "saturation": 0.48
+    },
+    {
+      "t": 10.9,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0010.90.png",
+      "ocr": "ZZZ 0 1 6 (알람 못 들음) 이번엔 알람도 못 들었다.",
+      "brightness": 0.158,
+      "saturation": 0.392
+    },
+    {
+      "t": 13.3,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0013.30.png",
+      "ocr": "07:52 잠깐.일곱 시 오심이분?",
+      "brightness": 0.379,
+      "saturation": 0.815
+    },
+    {
+      "t": 16.1,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0016.10.png",
+      "ocr": "양치하면서 세수하면서 옷까지 입기 양치하면서 세수하고 옷까지.",
+      "brightness": 0.154,
+      "saturation": 0.358
+    },
+    {
+      "t": 19.0,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0019.00.png",
+      "ocr": "",
+      "brightness": 0.64,
+      "saturation": 0.619
+    },
+    {
+      "t": 21.5,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0021.50.png",
+      "ocr": "그날 밤 23:58 쇼츠 하나만 더… 그날 밤 열한 시 오십팔 분.",
+      "brightness": 0.185,
+      "saturation": 0.617
+    },
+    {
+      "t": 23.3,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0023.30.png",
+      "ocr": "알람 오늘은 진짜 일찍 일어난다 든 일곱 시.",
+      "brightness": 0.182,
+      "saturation": 0.708
+    },
+    {
+      "t": 23.9,
+      "path": "outputs/analyses/frames/c_20261031_snooze_loop/frame_0023.90.png",
+      "ocr": "알람 0 0 오늘은 진짜 일찍 일어난다 든",
+      "brightness": 0.184,
+      "saturation": 0.709
+    }
+  ],
+  "cuts": [
+    2.4,
+    5.0,
+    7.4,
+    9.8,
+    12.0,
+    14.6,
+    17.6,
+    20.4,
+    22.6
+  ],
+  "hard_cuts": [
+    9.8,
+    12.0,
+    14.6,
+    17.6,
+    20.4
+  ],
+  "black_segments": [],
+  "loudness": {
+    "integrated_lufs": -14.3,
+    "loudness_range_lu": 2.8,
+    "true_peak_dbfs": -1.4
+  },
+  "features": {
+    "duration_s": 24.0,
+    "aspect": 0.5625,
+    "n_shots": 10,
+    "cuts_per_10s": 3.75,
+    "mean_shot_s": 2.4,
+    "first_cut_s": 2.4,
+    "hard_cuts_per_10s": 2.08,
+    "text_on_screen_ratio": 0.94,
+    "first_text_s": 0.0,
+    "first_speech_s": 0.08,
+    "speech_ratio": 0.81,
+    "words_per_s": 1.75,
+    "integrated_lufs": -14.3,
+    "silence_ratio": 0.14,
+    "mean_brightness": 0.235,
+    "mean_saturation": 0.635,
+    "loop_similarity": 0.969,
+    "ends_with_question": false
+  },
+  "observations": [
+    {
+      "kind": "hook",
+      "t": 0.0,
+      "fact": "first on-screen text at 0.0s; first speech at 0.08s; first cut at 2.4s",
+      "evidence": [
+        "outputs/analyses/frames/c_20261031_snooze_loop/frame_0000.00.png",
+        "outputs/analyses/frames/c_20261031_snooze_loop/frame_0000.50.png",
+        "outputs/analyses/frames/c_20261031_snooze_loop/frame_0001.00.png",
+        "outputs/analyses/frames/c_20261031_snooze_loop/frame_0001.20.png",
+        "outputs/analyses/frames/c_20261031_snooze_loop/frame_0002.00.png",
+        "outputs/analyses/frames/c_20261031_snooze_loop/frame_0003.00.png"
+      ]
+    },
+    {
+      "kind": "rhythm",
+      "fact": "10 shots, mean 2.4s, 3.75 cuts/10s",
+      "evidence": {
+        "cuts": [
+          2.4,
+          5.0,
+          7.4,
+          9.8,
+          12.0,
+          14.6,
+          17.6,
+          20.4,
+          22.6
+        ],
+        "shot_lengths": [
+          2.4,
+          2.6,
+          2.4,
+          2.4,
+          2.2,
+          2.6,
+          3.0,
+          2.8,
+          2.2,
+          1.4
+        ]
+      }
+    },
+    {
+      "kind": "audio",
+      "fact": "integrated -14.3 LUFS, true peak -1.4 dBFS, speech ratio 0.81",
+      "evidence": {
+        "silences": [
+          {
+            "start": 1.71744,
+            "end": 2.16187
+          },
+          {
+            "start": 3.85094,
+            "end": 4.29608
+          },
+          {
+            "start": 4.38863,
+            "end": 4.83106
+          },
+          {
+            "start": 11.3486,
+            "end": 11.7959
+          },
+          {
+            "start": 16.7158,
+            "end": 17.1686
+          },
+          {
+            "start": 17.2498,
+            "end": 17.6
+          },
+          {
+            "start": 23.401,
+            "end": 24.1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "ending",
+      "t": 23.9,
+      "fact": "last-frame/first-frame similarity 0.969 (higher → loopable); ends with question: False",
+      "evidence": [
+        "outputs/analyses/frames/c_20261031_snooze_loop/frame_0000.00.png",
+        "outputs/analyses/frames/c_20261031_snooze_loop/frame_0023.90.png"
+      ]
+    }
+  ],
+  "interpretation": {
+    "author": "Claude (analyze-video skill), 2026-10-31",
+    "note": "Interpretation of our OWN render; it validates the analyzer against a known storyboard, it is not evidence of audience response.",
+    "claims": [
+      {
+        "claim": "Hook is a visual statement, not a question: a full-screen clock (07:00) plus a promise line is legible from frame 0, and narration starts at 0.08 s.",
+        "evidence": [
+          "outputs/analyses/frames/c_20261031_snooze_loop/frame_0000.00.png",
+          "features.first_text_s=0.0",
+          "features.first_speech_s=0.08"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "Tension is carried by the size of the time jumps (1, 5, 5, 5, then 36 minutes) and is reinforced by a palette shift to red and a shake at 12.0 s.",
+        "evidence": [
+          "cuts=[2.4,5.0,7.4,9.8,12.0,...]",
+          "outputs/analyses/frames/c_20261031_snooze_loop/frame_0013.30.png"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "Edit rhythm is steady (mean shot 2.4 s, 3.75 edits/10 s) with no change of pace before the payoff; a faster run of cuts before 07:52 may raise tension further.",
+        "evidence": [
+          "features.mean_shot_s=2.4",
+          "features.cuts_per_10s=3.75"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "The ending reuses the opening layout, so the last frame closely matches the first (similarity 0.969). This is designed as a replay incentive; whether it actually raises replays is untested.",
+        "evidence": [
+          "outputs/analyses/frames/c_20261031_snooze_loop/frame_0000.00.png",
+          "outputs/analyses/frames/c_20261031_snooze_loop/frame_0023.90.png",
+          "features.loop_similarity=0.969"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "claim": "OCR at 19.0 s returned no text even though a white card with dark text is on screen: Tesseract misses text on the rounded card, a known OCR blind spot to account for when reading text_on_screen_ratio.",
+        "evidence": [
+          "outputs/analyses/frames/c_20261031_snooze_loop/frame_0019.00.png"
+        ],
+        "confidence": "high"
+      },
+      {
+        "claim": "The espeak-ng narration is intelligible but robotic; OCR of the burned-in captions also shows a mis-read ('오심이분' for '오십이 분'), so captions remain the reliable text channel.",
+        "evidence": [
+          "outputs/analyses/frames/c_20261031_snooze_loop/frame_0013.30.png"
+        ],
+        "confidence": "medium"
+      }
+    ]
+  }
+}

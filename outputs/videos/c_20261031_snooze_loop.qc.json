@@ -1,0 +1,120 @@
+{
+  "pass": true,
+  "media": {
+    "duration_s": 24.1,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "has_audio": true,
+    "bitrate": 861270
+  },
+  "checks": [
+    {
+      "check": "render_integrity",
+      "pass": true,
+      "value": [],
+      "expected": "no decoder errors",
+      "blocking": true
+    },
+    {
+      "check": "resolution",
+      "pass": true,
+      "value": "1080x1920",
+      "expected": "1080x1920",
+      "blocking": true
+    },
+    {
+      "check": "aspect_9_16",
+      "pass": true,
+      "value": 0.5625,
+      "expected": "0.5625",
+      "blocking": true
+    },
+    {
+      "check": "fps",
+      "pass": true,
+      "value": 30.0,
+      "expected": "24–60",
+      "blocking": true
+    },
+    {
+      "check": "codec",
+      "pass": true,
+      "value": "h264",
+      "expected": "h264 (widest platform support)",
+      "blocking": true
+    },
+    {
+      "check": "duration",
+      "pass": true,
+      "value": 24.1,
+      "expected": "24.0±1s",
+      "blocking": true
+    },
+    {
+      "check": "duration_platform_limits",
+      "pass": true,
+      "value": 24.1,
+      "expected": "3–90 s (fits Reels and Shorts)",
+      "blocking": true
+    },
+    {
+      "check": "audio_present",
+      "pass": true,
+      "value": "aac",
+      "expected": "audio track (aac)",
+      "blocking": true
+    },
+    {
+      "check": "loudness_integrated",
+      "pass": true,
+      "value": -14.3,
+      "expected": "-14.0±2.0 LUFS",
+      "blocking": true
+    },
+    {
+      "check": "true_peak",
+      "pass": true,
+      "value": -1.4,
+      "expected": "≤ -1.0 dBFS",
+      "blocking": true
+    },
+    {
+      "check": "black_frames",
+      "pass": true,
+      "value": [],
+      "expected": "no black segment ≥ 0.3 s",
+      "blocking": true
+    },
+    {
+      "check": "frozen_video",
+      "pass": true,
+      "value": [],
+      "expected": "no static stretch ≥ 2.5 s",
+      "blocking": false
+    },
+    {
+      "check": "subtitle_sidecar",
+      "pass": true,
+      "value": 11,
+      "expected": "SRT with ≥1 cue",
+      "blocking": true
+    },
+    {
+      "check": "subtitle_coverage",
+      "pass": true,
+      "value": 0.8,
+      "expected": "cues cover ≥ 50% of runtime",
+      "blocking": false
+    },
+    {
+      "check": "subtitle_burned_in_legible",
+      "pass": true,
+      "value": "6/6 sampled cues OCR-readable",
+      "expected": "≥ 60% Korean text detected",
+      "blocking": true
+    }
+  ]
+}

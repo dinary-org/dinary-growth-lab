@@ -1,0 +1,62 @@
+{
+  "youtube_data_api_v3": {
+    "status": "BLOCKED",
+    "detail": "YOUTUBE_API_KEY not set; googleapis.com reachable (HTTP 403)",
+    "checked_at": "2026-10-31T05:10:23+00:00"
+  },
+  "apify_instagram": {
+    "status": "BLOCKED",
+    "detail": "api.apify.com unreachable: ProxyError (network policy); token not set",
+    "checked_at": "2026-10-31T05:10:23+00:00"
+  },
+  "supabase_rest": {
+    "status": "BLOCKED",
+    "detail": "SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY not set (schema can still be applied via MCP)",
+    "checked_at": "2026-10-31T05:10:23+00:00"
+  },
+  "cloudflare_r2": {
+    "status": "BLOCKED",
+    "detail": "R2 credentials not set; r2.cloudflarestorage.com unreachable: ProxyError",
+    "checked_at": "2026-10-31T05:10:24+00:00"
+  },
+  "runway": {
+    "status": "BLOCKED",
+    "detail": "RUNWAYML_API_SECRET not set; api.dev.runwayml.com unreachable: ProxyError",
+    "checked_at": "2026-10-31T05:10:24+00:00"
+  },
+  "claude_api": {
+    "status": "BLOCKED",
+    "detail": "ANTHROPIC_API_KEY not set — concepts are written in-session via the generate-concepts skill",
+    "checked_at": "2026-10-31T05:10:24+00:00"
+  },
+  "ffmpeg": {
+    "status": "WORKING",
+    "detail": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+    "checked_at": "2026-10-31T05:10:24+00:00"
+  },
+  "tesseract_ocr": {
+    "status": "WORKING",
+    "detail": "kor+eng available",
+    "checked_at": "2026-10-31T05:10:24+00:00"
+  },
+  "transcription": {
+    "status": "BLOCKED",
+    "detail": "faster-whisper not installed; model host huggingface.co unreachable: ProxyError. Sidecar SRT path works.",
+    "checked_at": "2026-10-31T05:10:24+00:00"
+  },
+  "tts_espeak": {
+    "status": "WORKING",
+    "detail": "espeak-ng Korean voice (placeholder quality)",
+    "checked_at": "2026-10-31T05:10:24+00:00"
+  },
+  "remotion": {
+    "status": "BLOCKED",
+    "detail": "run `npm ci` in render/",
+    "checked_at": "2026-10-31T05:10:24+00:00"
+  },
+  "watch_skill": {
+    "status": "BLOCKED",
+    "detail": "bradautomates/claude-video fetches media from platform URLs via yt-dlp; www.youtube.com unreachable: ProxyError. Local-file analysis is covered by dgl.analysis.media.",
+    "checked_at": "2026-10-31T05:10:24+00:00"
+  }
+}
