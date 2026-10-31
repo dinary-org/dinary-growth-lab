@@ -5,6 +5,7 @@ import logging
 from collections import Counter
 from typing import Any
 
+from ..http import HttpError
 from ..store import Store, loads, now_iso
 from ..sources.youtube import SHORTS_MAX_S, QuotaExceeded, YouTubeSource
 from .explore import QueryPlanner
@@ -35,7 +36,7 @@ def discover_youtube(
     n_queries: int = 6,
     chart_pages: int = 4,
     days: int = 14,
-    baseline_top_creators: int = 25,
+    baseline_top_creators: int = 60,
     seed: int | None = None,
 ) -> dict[str, Any]:
     report: dict[str, Any] = {"platform": "youtube", "started_at": now_iso(), "queries": [], "errors": []}
@@ -62,30 +63,22 @@ def discover_youtube(
             break
 
     # hydrate metadata + statistics; keep only short-form by duration
-    kept, creators = 0, Counter()
+    kept, new, creators = 0, 0, Counter()
     try:
         for item in yt.videos(list(found)):
             video, snap = yt.to_rows(item, found[item["id"]])
             if video["duration_s"] is None or video["duration_s"] > SHORTS_MAX_S:
                 continue
-            store.upsert("videos", video)
+            new += store.upsert_video(video)
             store.insert_snapshot_if_new(snap)
             creators[video["creator_id"]] += 1
             kept += 1
     except QuotaExceeded as e:
         report["errors"].append(str(e))
 
-    # creator baselines (recent uploads) for creator-relative outperformance
-    try:
-        ch_items = list(yt.channels(list(creators)))
-        for ch in ch_items[:baseline_top_creators]:
-            uploads = ch.get("contentDetails", {}).get("relatedPlaylists", {}).get("uploads")
-            views = yt.recent_upload_views(uploads) if uploads else []
-            store.upsert("creators", yt.channel_row(ch, views))
-        for ch in ch_items[baseline_top_creators:]:
-            store.upsert("creators", yt.channel_row(ch, None))
-    except QuotaExceeded as e:
-        report["errors"].append(str(e))
+    # creator baselines (recent Shorts) for creator-relative outperformance
+    report["baselines"] = refresh_baselines(store, yt, list(creators), max_creators=baseline_top_creators)
+    report["errors"] += report["baselines"].pop("errors")
 
     # record yields so the planner learns which arms surface outperformers
     scores = {v["video_id"]: s for v, s, _ in corpus_scores(store, "youtube")}
@@ -97,6 +90,7 @@ def discover_youtube(
         finished_at=now_iso(),
         candidates_found=len(found),
         short_form_kept=kept,
+        new_videos=new,
         distinct_creators=len(creators),
         quota_used=yt.budget.used,
         sampling_notes=[
@@ -107,6 +101,47 @@ def discover_youtube(
         ],
     )
     return report
+
+
+def refresh_baselines(store: Store, yt: YouTubeSource, creator_ids: list[str] | None = None,
+                      max_creators: int = 60, max_age_days: int = 7) -> dict[str, Any]:
+    """Fetch recent-Shorts baselines, highest-reach creators first; skip fresh ones.
+
+    A channel whose uploads cannot be listed (404 / hidden) gets a row without a
+    baseline instead of failing the run; the reason is kept in `raw`.
+    """
+    if creator_ids is None:
+        creator_ids = [r["creator_id"] for r in store.query("SELECT DISTINCT creator_id FROM videos WHERE platform='youtube'")]
+    top_views = {r["creator_id"]: r["v"] or 0 for r in store.query(
+        "SELECT v.creator_id, MAX(s.views) v FROM videos v JOIN video_snapshots s USING (platform, video_id) "
+        "WHERE v.platform='youtube' GROUP BY v.creator_id")}
+    fresh = {r["creator_id"] for r in store.query(
+        "SELECT creator_id FROM creators WHERE platform='youtube' AND baseline_n IS NOT NULL "
+        "AND observed_at >= datetime('now', ?)", (f"-{max_age_days} days",))}
+    todo = sorted((c for c in set(creator_ids) if c and c not in fresh), key=lambda c: -top_views.get(c, 0))
+    out: dict[str, Any] = {"requested": len(todo), "with_baseline": 0, "unavailable": 0, "errors": []}
+    try:
+        items = {ch["id"]: ch for ch in yt.channels(todo)}
+        for i, cid in enumerate(todo):
+            ch = items.get(cid)
+            if ch is None:
+                continue
+            views, note = None, None
+            if i < max_creators:
+                uploads = ch.get("contentDetails", {}).get("relatedPlaylists", {}).get("uploads")
+                try:
+                    views = yt.recent_upload_views(uploads) if uploads else []
+                except HttpError as e:
+                    views, note = [], f"uploads not listable: HTTP {e.status}"
+                    out["unavailable"] += 1
+            row = yt.channel_row(ch, views)
+            if note:
+                row["raw"] = {**row["raw"], "baseline_note": note}
+            store.upsert("creators", row)
+            out["with_baseline"] += int(bool(views) and len(views) >= 5)
+    except QuotaExceeded as e:
+        out["errors"].append(str(e))
+    return out
 
 
 def snapshot_youtube(store: Store, yt: YouTubeSource, max_age_days: int = 30) -> dict[str, Any]:

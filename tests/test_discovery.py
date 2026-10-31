@@ -51,3 +51,33 @@ def test_planner_never_repeats_a_term():
     for seed in range(20):
         plan = QueryPlanner(seed=seed).plan(8, "ko")
         assert len({t for t, _ in plan}) == len(plan)
+
+
+def test_baselines_survive_unlistable_channel_and_prioritise_reach(store):
+    from dgl.discovery.engine import refresh_baselines
+    from dgl.http import HttpError
+    from dgl.sources.youtube import QuotaBudget
+
+    for cid, views in (("big", 900), ("hidden", 500), ("small", 10)):
+        store.upsert("videos", {"platform": "youtube", "video_id": f"v_{cid}", "url": "u", "creator_id": cid})
+        store.upsert("video_snapshots", {"platform": "youtube", "video_id": f"v_{cid}",
+                                         "observed_at": "2026-10-31T00:00:00Z", "views": views})
+
+    class FakeYT:
+        budget = QuotaBudget(1000)
+        channel_row = staticmethod(__import__("dgl.sources.youtube", fromlist=["x"]).YouTubeSource.channel_row)
+
+        def channels(self, ids):
+            return [{"id": c, "statistics": {}, "contentDetails": {"relatedPlaylists": {"uploads": f"UU{c}"}}} for c in ids]
+
+        def recent_upload_views(self, uploads):
+            if uploads == "UUhidden":
+                raise HttpError(404, "playlistItems", "not found")
+            return [100, 200, 300, 400, 500]
+
+    out = refresh_baselines(store, FakeYT(), max_creators=2)
+    assert out == {"requested": 3, "with_baseline": 1, "unavailable": 1, "errors": []}
+    rows = {r["creator_id"]: r for r in store.query("SELECT * FROM creators")}
+    assert rows["big"]["baseline_n"] == 5          # top creator processed
+    assert rows["hidden"]["baseline_n"] == 0       # recorded, not fatal
+    assert rows["small"]["baseline_median_views"] is None  # beyond max_creators: no baseline call

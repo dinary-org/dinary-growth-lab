@@ -38,7 +38,8 @@ def cmd_discover(a, s):
     if a.platform in ("youtube", "all"):
         yt = YouTubeSource(s.youtube_api_key, QuotaBudget(a.quota or s.youtube_daily_quota), s.region, s.language)
         out["youtube"] = run_job(st, s, "discover_youtube", lambda: discover_youtube(
-            st, yt, n_queries=a.queries, chart_pages=a.chart_pages, days=a.days))
+            st, yt, n_queries=a.queries, chart_pages=a.chart_pages, days=a.days),
+            cost_fn=lambda: {"youtube_quota_units": yt.budget.used})
     if a.platform in ("instagram", "all"):
         from .sources.instagram_apify import InstagramApifySource
         ig = InstagramApifySource(s.apify_token, s.apify_reel_actor, s.apify_hashtag_actor, s.apify_max_usd)
@@ -54,7 +55,7 @@ def cmd_discover(a, s):
             for it in items:
                 rows = ig.to_rows(it, f"apify:hashtag:{','.join(tags)}")
                 if rows:
-                    st.upsert("videos", rows[0])
+                    st.upsert_video(rows[0])
                     st.insert_snapshot_if_new(rows[1])
                     n += 1
             return {"hashtags": tags, "items": len(items), "kept": n, "cost": {"apify_max_usd": s.apify_max_usd}}
@@ -68,7 +69,18 @@ def cmd_snapshot(a, s):
     from .sources.youtube import QuotaBudget, YouTubeSource
     st = _store(s)
     yt = YouTubeSource(s.youtube_api_key, QuotaBudget(a.quota or 500), s.region, s.language)
-    _print(run_job(st, s, "snapshot_youtube", lambda: snapshot_youtube(st, yt)))
+    _print(run_job(st, s, "snapshot_youtube", lambda: snapshot_youtube(st, yt),
+                   cost_fn=lambda: {"youtube_quota_units": yt.budget.used}))
+
+
+def cmd_baselines(a, s):
+    from .discovery.engine import refresh_baselines
+    from .pipeline.jobs import run_job
+    from .sources.youtube import QuotaBudget, YouTubeSource
+    st = _store(s)
+    yt = YouTubeSource(s.youtube_api_key, QuotaBudget(a.quota), s.region, s.language)
+    _print(run_job(st, s, "baselines_youtube", lambda: refresh_baselines(st, yt, max_creators=a.max_creators),
+                   cost_fn=lambda: {"youtube_quota_units": yt.budget.used}))
 
 
 def cmd_analyze(a, s):
@@ -210,6 +222,9 @@ def main(argv=None):
     x.add_argument("--days", type=int, default=14); x.add_argument("--quota", type=int)
     x.add_argument("--ig-limit", type=int, default=30); x.set_defaults(fn=cmd_discover)
     x = sub.add_parser("snapshot"); x.add_argument("--quota", type=int); x.set_defaults(fn=cmd_snapshot)
+    x = sub.add_parser("baselines", help="creator-relative baselines (recent Shorts), top creators first")
+    x.add_argument("--max-creators", type=int, default=150); x.add_argument("--quota", type=int, default=800)
+    x.set_defaults(fn=cmd_baselines)
     x = sub.add_parser("analyze"); x.add_argument("file"); x.add_argument("--rights", required=True)
     x.add_argument("--platform", default="own"); x.add_argument("--video-id"); x.add_argument("--srt")
     x.add_argument("--out"); x.add_argument("--evidence-dir", help="where frames are kept (default: work/evidence)")

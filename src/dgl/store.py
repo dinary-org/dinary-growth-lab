@@ -137,6 +137,24 @@ class Store:
         self.db.commit()
         return n
 
+    def upsert_video(self, row: dict[str, Any]) -> bool:
+        """Upsert a video but keep when and how it was *first* discovered; returns True if new.
+
+        Later sightings refresh title/description/tags (creators edit them) and add
+        their discovery path to `raw.seen_via`, so discovery-arm yield stays attributable.
+        """
+        prev = self.query("SELECT first_seen_at, discovered_via, raw FROM videos WHERE platform=? AND video_id=?",
+                          (row["platform"], row["video_id"]))
+        if not prev:
+            self.upsert("videos", row)
+            return True
+        p = prev[0]
+        raw = {**loads(p["raw"], {}), **(row.get("raw") or {})}
+        seen = list(dict.fromkeys(loads(p["raw"], {}).get("seen_via", [p["discovered_via"]]) + [row["discovered_via"]]))
+        raw["seen_via"] = seen[-20:]
+        self.upsert("videos", {**row, "first_seen_at": p["first_seen_at"], "discovered_via": p["discovered_via"], "raw": raw})
+        return False
+
     def insert_snapshot_if_new(self, row: dict[str, Any]) -> bool:
         """Snapshots are append-only; dedupe identical consecutive observations."""
         last = self.db.execute(

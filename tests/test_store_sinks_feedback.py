@@ -101,3 +101,16 @@ def test_settings_accept_provider_variable_names(monkeypatch):
     assert s.r2_endpoint_url == "https://abc.r2.cloudflarestorage.com" and s.r2_bucket == "media"
     monkeypatch.setenv("SUPABASE_SERVICE_ROLE_KEY", "legacy")
     assert Settings().supabase_key == "legacy"  # explicit name wins
+
+
+def test_upsert_video_keeps_first_discovery(store):
+    v = {"platform": "youtube", "video_id": "a", "url": "u", "title": "old", "discovered_via": "search:random:x",
+         "first_seen_at": "2026-10-31T01:00:00+00:00", "raw": {"categoryId": "22"}}
+    assert store.upsert_video(v)
+    assert not store.upsert_video({**v, "title": "edited", "discovered_via": "search:exploit:y",
+                                   "first_seen_at": "2026-11-01T00:00:00+00:00", "raw": {"categoryId": "24"}})
+    row = store.query("SELECT * FROM videos")[0]
+    assert row["title"] == "edited"
+    assert row["first_seen_at"] == "2026-10-31T01:00:00+00:00" and row["discovered_via"] == "search:random:x"
+    import json
+    assert json.loads(row["raw"])["seen_via"] == ["search:random:x", "search:exploit:y"]

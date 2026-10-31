@@ -130,11 +130,22 @@ class YouTubeSource:
             data = self._get("channels", part="snippet,statistics,contentDetails", id=",".join(ids[i : i + 50]))
             yield from data.get("items", [])
 
-    def recent_upload_views(self, uploads_playlist: str, n: int = 30) -> list[int]:
-        """View counts of a creator's recent uploads, for creator-relative baselines."""
+    def recent_upload_views(self, uploads_playlist: str, n: int = 30, shorts_only: bool = True) -> list[int]:
+        """View counts of a creator's recent uploads, for creator-relative baselines.
+
+        With `shorts_only`, long-form uploads are excluded so a Short is compared with
+        the creator's other Shorts rather than with a different format's audience.
+        """
         data = self._get("playlistItems", part="contentDetails", playlistId=uploads_playlist, maxResults=min(n, 50))
         vids = [it["contentDetails"]["videoId"] for it in data.get("items", [])]
-        return [v for it in self.videos(vids) if (v := _int(it.get("statistics", {}).get("viewCount"))) is not None]
+        out = []
+        for it in self.videos(vids):
+            d = parse_iso8601_duration(it.get("contentDetails", {}).get("duration"))
+            if shorts_only and (d is None or d > SHORTS_MAX_S):
+                continue
+            if (v := _int(it.get("statistics", {}).get("viewCount"))) is not None:
+                out.append(v)
+        return out
 
     # --- normalisation -----------------------------------------------------
     @staticmethod

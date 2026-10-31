@@ -24,7 +24,8 @@ class BudgetExceeded(RuntimeError):
 
 
 def run_job(store: Store, s: Settings, name: str, fn: Callable[[], dict[str, Any]], retries: int = 2,
-            retry_on: tuple[type[BaseException], ...] = (ConnectionError, TimeoutError)) -> dict[str, Any]:
+            retry_on: tuple[type[BaseException], ...] = (ConnectionError, TimeoutError),
+            cost_fn: Callable[[], dict[str, Any]] | None = None) -> dict[str, Any]:
     job_id = new_id(f"job_{name}")
     started = now_iso()
     attempt, result, status, err = 0, None, "failed", None
@@ -48,7 +49,8 @@ def run_job(store: Store, s: Settings, name: str, fn: Callable[[], dict[str, Any
             synced = SupabaseSink(s).drain(store)
         except Exception as e:  # noqa: BLE001 - keep queue for the next run
             err = (err or "") + f"\nsync failed (rows kept queued): {e}"
-    cost = (result or {}).get("cost") or {k: (result or {}).get(k) for k in ("quota_used",) if (result or {}).get(k)}
+    # cost_fn reads live counters, so a job that fails half-way still records what it spent
+    cost = cost_fn() if cost_fn else ((result or {}).get("cost") or {})
     store.upsert("job_runs", {"job_id": job_id, "job": name, "started_at": started, "finished_at": now_iso(),
                               "status": status, "attempts": attempt, "cost": cost,
                               "log": json.dumps({"error": err, "synced_rows": synced}, ensure_ascii=False)})
