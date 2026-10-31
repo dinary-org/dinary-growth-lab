@@ -1,7 +1,12 @@
 # Integrations — status and setup
 
 Status was checked live on **2026-10-31** in a Claude Code Cloud session (`dgl status`; raw output
-in `outputs/integration_status.json`). Each status means:
+in `outputs/integration_status.json`).
+
+> **Update (later on 2026-10-31):** credentials and network access were added. YouTube Data API,
+> Apify, Supabase (dedicated project, `growth_lab` schema) and Cloudflare R2 now pass live checks.
+> Real collection ran; see report §9. The table below records the first, blocked state. Variable
+> aliases accepted: `SUPABASE_SECRET_KEY`, `R2_ENDPOINT`, `R2_BUCKET_NAME`. Each status means:
 
 - **WORKING**: a real end-to-end call or operation succeeded in this environment.
 - **BLOCKED**: a credential or network permission is missing. The exact item is named below.

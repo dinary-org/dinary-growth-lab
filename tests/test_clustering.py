@@ -56,3 +56,12 @@ def test_too_few_videos_is_skipped(store):
     rows, _ = S.corpus(1, {"A": 3}, S.NOW - timedelta(days=2), 1)
     S.load(store, rows)
     assert run_clustering(store, now=S.NOW)["status"] == "skipped"
+
+
+def test_cluster_stats_reports_query_echo_and_ads():
+    from dgl.clustering.emergent import cluster_stats
+    members = [{"creator_id": f"c{i}", "discovered_via": "search:exploit:#x" if i < 8 else "chart", "popularity": 0.5,
+                "ad_suspect": i == 0, "log_outperformance": 3.0 if i == 0 else 0.1} for i in range(10)]
+    st = cluster_stats(members)
+    assert st["query_concentration"] == 0.8 and st["dominant_discovery_path"] == "search:exploit:#x"
+    assert st["n_ad_suspect"] == 1 and st["median_log_outperformance"] == 0.1  # ad excluded from evidence

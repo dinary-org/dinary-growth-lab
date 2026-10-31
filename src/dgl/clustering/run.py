@@ -56,7 +56,8 @@ def run_clustering(store: Store, min_size: int = 3, embed_fn=None, platform: str
         feature_rows.append(f)
         member_info.append({**m, "popularity": pop, "platform": v["platform"], "video_id": v["video_id"],
                             "creator_id": v.get("creator_id"), "published_at": v.get("published_at"),
-                            "access_level": a["access_level"] if a else "metadata_only"})
+                            "access_level": a["access_level"] if a else "metadata_only",
+                            "discovered_via": v.get("discovered_via")})
 
     results: dict[str, Any] = {"created_at": now_iso(), "n_videos": len(videos), "spaces": {}}
     Xt = E.topic_embeddings(videos, embed_fn)

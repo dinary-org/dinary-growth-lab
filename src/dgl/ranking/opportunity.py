@@ -48,9 +48,11 @@ class OwnHistory:
 
 
 def components(members: list[dict], cluster: dict, corpus_size: int, own: OwnHistory) -> dict[str, float]:
-    rel = [m["log_outperformance"] for m in members if m.get("log_outperformance") is not None]
-    pop = [m["popularity"] for m in members if m.get("popularity") is not None]
-    outp = _clip01(0.5 + median(rel) / 2) if rel else (_clip01(median(pop)) if pop else 0.0)
+    organic = [m for m in members if not m.get("ad_suspect")] or members
+    rel = [m["log_outperformance"] for m in organic if m.get("log_outperformance") is not None]
+    pop = [m["popularity"] for m in organic if m.get("popularity") is not None]
+    # 0.5 = at the creator's baseline, 1.0 = 100x it (a /2 scale saturated at 10x on live data)
+    outp = _clip01(0.5 + median(rel) / 4) if rel else (_clip01(median(pop)) if pop else 0.0)
     st = cluster.get("stats", {})
     mom = _clip01(0.5 + 0.5 * (st.get("publication_momentum") or 0) + (st.get("popularity_delta_vs_prev") or 0))
     creators = {m.get("creator_id") for m in members}
@@ -58,7 +60,10 @@ def components(members: list[dict], cluster: dict, corpus_size: int, own: OwnHis
     indep = _clip01((1 - hhi) * min(1.0, len(creators) / 5))
     event = (cluster.get("lineage") or {}).get("event")
     novelty = _clip01((0.6 if event in ("emerged", "split") else 0.2) + 0.4 * (st.get("recent_count", 0) / max(1, len(members))))
-    saturation = _clip01((len(members) / max(1, corpus_size)) * 3 * min(1.0, len(creators) / 8))
+    if (st.get("query_concentration") or 0) >= 0.6:
+        saturation = 0.5  # unknown: cluster size is an echo of our own search query
+    else:
+        saturation = _clip01((len(members) / max(1, corpus_size)) * 3 * min(1.0, len(creators) / 8))
     cr = [m["comment_rate"] for m in members if m.get("comment_rate") is not None]
     lr = [m["like_rate"] for m in members if m.get("like_rate") is not None]
     share = _clip01((median(cr) * 200 if cr else 0) * 0.5 + (median(lr) * 15 if lr else 0) * 0.5) if (cr or lr) else 0.3
@@ -133,9 +138,20 @@ def rank(
                 "score_low": round(boots[int(0.1 * n_boot)], 4), "score_high": round(boots[int(0.9 * n_boot)], 4),
                 "components": {k: round(v, 3) for k, v in comp.items()},
                 "evidence": [{"platform": m["platform"], "video_id": m["video_id"], "views": m.get("views"),
-                              "log_outperformance": m.get("log_outperformance"), "access_level": m.get("access_level")}
+                              "log_outperformance": m.get("log_outperformance"), "access_level": m.get("access_level"),
+                              "ad_suspect": bool(m.get("ad_suspect"))}
                              for m in sorted(members, key=lambda m: -m["popularity"])[:8]],
                 "n_members": len(members), "_boots": boots,
+                "caveats": [c for c in (
+                    "query echo: cluster size reflects our search, not prevalence"
+                    if (tc["stats"].get("query_concentration") or 0) >= 0.6 else None,
+                    f"{sum(1 for m in members if m.get('ad_suspect'))} member(s) look ad-served (excluded as evidence)"
+                    if any(m.get("ad_suspect") for m in members) else None,
+                    "single creator: not independent repetition" if len({m.get('creator_id') for m in members}) == 1 else None,
+                    "no creator baselines: outperformance falls back to absolute popularity"
+                    if not any(m.get("log_outperformance") is not None and not m.get("ad_suspect") for m in members)
+                    else None,
+                ) if c],
             })
     candidates.sort(key=lambda c: -c["score"])
     n_exploit = max(1, round(n_slots * (1 - explore_share)))

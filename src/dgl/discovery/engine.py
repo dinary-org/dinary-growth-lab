@@ -9,7 +9,7 @@ from ..http import HttpError
 from ..store import Store, loads, now_iso
 from ..sources.youtube import SHORTS_MAX_S, QuotaExceeded, YouTubeSource
 from .explore import QueryPlanner
-from .metrics import popularity_score, video_metrics
+from .metrics import flag_ad_suspects, popularity_score, video_metrics
 
 log = logging.getLogger("dgl.discovery")
 
@@ -25,9 +25,9 @@ def corpus_scores(store: Store, platform: str | None = None) -> list[tuple[dict,
         creator = store.query(
             "SELECT * FROM creators WHERE platform=? AND creator_id=?", (v["platform"], v["creator_id"])
         )
-        m = video_metrics(v, snaps, creator[0] if creator else None)
-        out.append((v, popularity_score(m), m))
-    return out
+        out.append((v, video_metrics(v, snaps, creator[0] if creator else None)))
+    flag_ad_suspects([m for _, m in out])
+    return [(v, popularity_score(m), m) for v, m in out]
 
 
 def discover_youtube(

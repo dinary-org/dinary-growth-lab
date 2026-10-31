@@ -81,3 +81,15 @@ def test_baselines_survive_unlistable_channel_and_prioritise_reach(store):
     assert rows["big"]["baseline_n"] == 5          # top creator processed
     assert rows["hidden"]["baseline_n"] == 0       # recorded, not fatal
     assert rows["small"]["baseline_median_views"] is None  # beyond max_creators: no baseline call
+
+
+def test_ad_suspects_flagged_and_zero_popularity():
+    from dgl.discovery.metrics import flag_ad_suspects
+    ms = [{"views": 10_000, "likes": 90, "like_rate": 0.009} for _ in range(30)]
+    ad = {"views": 9_000_000, "likes": 0, "like_rate": 0.0}
+    small_quiet = {"views": 5_000, "likes": 0, "like_rate": 0.0}  # below the view floor: not flagged
+    med = flag_ad_suspects(ms + [ad, small_quiet])
+    assert med == 0.009
+    assert ad["ad_suspect"] and not small_quiet["ad_suspect"] and not ms[0]["ad_suspect"]
+    assert popularity_score(ad) == 0.0 < popularity_score(ms[0])
+    assert flag_ad_suspects(ms[:5]) is None  # too few rates to judge

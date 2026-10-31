@@ -114,3 +114,17 @@ def test_upsert_video_keeps_first_discovery(store):
     assert row["first_seen_at"] == "2026-10-31T01:00:00+00:00" and row["discovered_via"] == "search:random:x"
     import json
     assert json.loads(row["raw"])["seen_via"] == ["search:random:x", "search:exploit:y"]
+
+
+def test_drain_writes_parents_before_children(store, monkeypatch):
+    order = []
+
+    class Resp:
+        status_code = 201
+
+    monkeypatch.setattr("dgl.http.Client.request", lambda self, m, url, **kw: (order.append(url.rsplit("/", 1)[1]), Resp())[1])
+    store.upsert("clusters", {"run_id": "r1", "cluster_id": "t0"})
+    store.upsert("cluster_members", {"run_id": "r2", "cluster_id": "t0", "platform": "p", "video_id": "v"})
+    store.upsert("cluster_runs", {"run_id": "r2"})
+    SupabaseSink(Settings(supabase_url="https://p.supabase.co", supabase_key="k")).drain(store)
+    assert order == ["cluster_runs", "clusters", "cluster_members"]

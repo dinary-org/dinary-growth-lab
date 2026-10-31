@@ -1,0 +1,121 @@
+{
+  "concept_id": "c_20261031_merchant_lines",
+  "opportunity_id": "opp_20261031_8b9171ee",
+  "title_ko": "우리 동네 사장님 어록",
+  "logline_en": "A consented series featuring one charismatic local shopkeeper's signature lines, structured as a ranked countdown with a practical 'how to visit' payoff.",
+  "evidence": [
+    {
+      "ref": "youtube:qCRNgcF2ifM",
+      "kind": "measured",
+      "claim": "'남대문스카프아저씨연예인등극' — 1,203,102 views, 176x creator median (2026-10-25)."
+    },
+    {
+      "ref": "youtube:I4L-FhvAPs4",
+      "kind": "measured",
+      "claim": "'남대문 스카프 주말 방문 꿀팁' — 326,193 views, 208x creator median, 21 s."
+    },
+    {
+      "ref": "youtube:gQDZaqmH7Js",
+      "kind": "measured",
+      "claim": "Scarf-seller hashtags only — 244,322 views, 183x creator median."
+    },
+    {
+      "ref": "youtube:ya67LuMso9k",
+      "kind": "measured",
+      "claim": "'남대문 스카프 어록 순위' — 200,485 views, 4.6x creator median; ranked-quotes format."
+    },
+    {
+      "ref": "youtube:Eciw9Q2rKUA",
+      "kind": "measured",
+      "claim": "'남대문시장 살것들 다 사봤는데..' — 214,544 views, 15x creator median."
+    }
+  ],
+  "measured_facts": [
+    "Cluster t1 (run cr_topic_20261031_f84a18f2): 6 videos from 6 different creators about the same Namdaemun scarf seller, median 77x creator baseline, 5 of 6 published in the last 7 days (2026-10-25..29).",
+    "All 6 members came from a single search path (query concentration 1.0), so the cluster's size says nothing about how widespread the phenomenon is."
+  ],
+  "hypotheses": [
+    "H1: The driver is the person (a quotable, warm merchant) plus a visit-utility payoff, not the scarves; a different consenting merchant with distinctive lines can reproduce part of the effect.",
+    "H2: A ranked 'top 5 lines' structure holds viewers to the end better than a single-clip format (avg view % above account median).",
+    "H3 (risk): the effect is specific to this one person and will not transfer — treat the first episode as a test."
+  ],
+  "why_now": "Independent creators converged on one real-world character within a week (emerging: 5 of 6 videos in the last 7 days). Caveat: query echo; one collection day; metadata only.",
+  "creative_principle": "A real, consenting local character + quotable lines + a ranking device + a concrete reason to visit.",
+  "originality_notes": "We do not film or reuse the Namdaemun seller or any source footage; we film a different merchant who signs a release and approves the final cut.",
+  "format": "documentary-style vertical, ranked quotes, on-camera merchant with captions",
+  "duration_s": 40.0,
+  "hooks_ko": [
+    "이 사장님 말 한마디에 단골 됨",
+    "우리 동네 사장님 어록 TOP 5",
+    "물건보다 사장님 보러 가는 가게"
+  ],
+  "script_ko": [
+    {
+      "t": 0.0,
+      "speaker": "자막",
+      "line_ko": "이 사장님 말 한마디에 단골 됨"
+    },
+    {
+      "t": 4.0,
+      "speaker": "사장님",
+      "line_ko": "(촬영 당일 사장님 실제 발언, 사전 동의)"
+    },
+    {
+      "t": 34.0,
+      "speaker": "자막",
+      "line_ko": "위치·영업시간은 고정 댓글에"
+    }
+  ],
+  "storyboard": [
+    {
+      "scene": 1,
+      "start_s": 0.0,
+      "end_s": 4.0,
+      "visual": "Merchant close-up mid-sentence",
+      "on_screen_text_ko": "말 한마디에 단골 됨",
+      "audio": "natural sound",
+      "edit": "cold open"
+    },
+    {
+      "scene": 2,
+      "start_s": 4.0,
+      "end_s": 34.0,
+      "visual": "Five short quote moments, numbered 5→1",
+      "on_screen_text_ko": "어록 5위 … 1위",
+      "audio": "natural sound + light bed",
+      "edit": "number cards between quotes"
+    },
+    {
+      "scene": 3,
+      "start_s": 34.0,
+      "end_s": 40.0,
+      "visual": "Shopfront + map pin",
+      "on_screen_text_ko": "위치는 고정 댓글",
+      "audio": "bed out",
+      "edit": "end card"
+    }
+  ],
+  "edit_plan": "Countdown 5→1 with the strongest line last; cut each quote to its punchline; captions on every line.",
+  "audio_plan": "Natural on-site sound, lav mic on the merchant; light bed under transitions only; -14 LUFS.",
+  "assets_required": [
+    {
+      "asset": "Consenting local merchant + signed release",
+      "source": "outreach in our neighbourhood",
+      "license": "model/property release"
+    },
+    {
+      "asset": "Phone + lav mic",
+      "source": "team",
+      "license": "n/a"
+    }
+  ],
+  "difficulty": "medium",
+  "est_cost_usd": 20.0,
+  "est_hours": 6.0,
+  "success_metric": "Views above account median and comments mentioning a visit; if below median after 2 episodes, retire H1.",
+  "risks": [
+    "Person-driven effects may not transfer",
+    "Consent and portrayal must be approved by the merchant",
+    "Query-echo cluster: prevalence unknown"
+  ]
+}

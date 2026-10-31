@@ -12,6 +12,9 @@ from .store import PRIMARY_KEYS, Store
 
 log = logging.getLogger("dgl.sinks")
 
+TABLE_ORDER = ["videos", "video_snapshots", "creators", "analyses", "cluster_runs", "clusters", "cluster_members",
+               "opportunities", "concepts", "productions", "own_posts", "own_snapshots", "integration_checks", "job_runs"]
+
 
 class SupabaseSink:
     """Replicates the local sync queue into Supabase via PostgREST upserts."""
@@ -69,7 +72,9 @@ class SupabaseSink:
                 row = json.loads(item["row"])
                 key = tuple(row.get(k) for k in PRIMARY_KEYS[item["tbl"]])
                 by_table[item["tbl"]][key] = row  # last write wins within a batch
-            for table, rows in by_table.items():
+            # parents before children so foreign keys hold even when a batch spans runs
+            for table in sorted(by_table, key=lambda t: TABLE_ORDER.index(t) if t in TABLE_ORDER else len(TABLE_ORDER)):
+                rows = by_table[table]
                 self.upsert(table, list(rows.values()))
                 total += len(rows)
             store.ack_sync(batch[-1]["seq"])

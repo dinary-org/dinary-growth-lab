@@ -174,10 +174,13 @@ def cluster_stats(members: list[dict], recent_days: int = 7) -> dict[str, Any]:
     from datetime import datetime, timezone, timedelta
 
     now = datetime.now(timezone.utc)
-    pops = [m["popularity"] for m in members if m.get("popularity") is not None]
+    organic = [m for m in members if not m.get("ad_suspect")]
+    pops = [m["popularity"] for m in organic if m.get("popularity") is not None]
     vel = [m["velocity_vph"] for m in members if m.get("velocity_vph") is not None]
-    rel = [m["log_outperformance"] for m in members if m.get("log_outperformance") is not None]
+    rel = [m["log_outperformance"] for m in organic if m.get("log_outperformance") is not None]
     creators = Counter(m.get("creator_id") for m in members)
+    paths = Counter(m.get("discovered_via") or "?" for m in members)
+    top_path, top_n = paths.most_common(1)[0] if paths else ("?", 0)
     pubs = [parse_ts(m.get("published_at")) for m in members]
     recent = sum(1 for p in pubs if p and now - p <= timedelta(days=recent_days))
     prior = sum(1 for p in pubs if p and timedelta(days=recent_days) < now - p <= timedelta(days=2 * recent_days))
@@ -197,6 +200,12 @@ def cluster_stats(members: list[dict], recent_days: int = 7) -> dict[str, Any]:
         "prior_count": prior,
         # publication momentum: are more members appearing recently than in the prior window?
         "publication_momentum": round((recent - prior) / max(1, recent + prior), 3),
+        "n_ad_suspect": len(members) - len(organic),
+        # adaptive discovery: if most members came from one query, size reflects what we
+        # searched for, not prevalence on the platform
+        "query_concentration": round(top_n / len(members), 3) if members else None,
+        "dominant_discovery_path": top_path,
+        "n_discovery_paths": len(paths),
     }
 
 

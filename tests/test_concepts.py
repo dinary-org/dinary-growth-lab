@@ -6,6 +6,8 @@ from dgl.creative.concepts import CONCEPT_SCHEMA, validate
 
 ROOT = Path(__file__).resolve().parents[1]
 SEC = {e["id"] for e in json.loads((ROOT / "research" / "secondary_evidence.json").read_text())["items"]}
+# measured refs are checked against the committed snapshot of the real corpus
+KNOWN = {v["ref"] for p in (ROOT / "outputs" / "research").glob("*-corpus.json") for v in json.loads(p.read_text())["videos"]}
 
 
 def _concepts():
@@ -16,10 +18,11 @@ def test_repo_concepts_are_valid_and_diverse():
     cs = _concepts()
     assert len(cs) >= 3
     for c in cs:
-        assert validate(c, set(), SEC) == [], c["concept_id"]
+        assert validate(c, KNOWN, SEC) == [], c["concept_id"]
         assert set(CONCEPT_SCHEMA["required"]) <= set(c)
     assert len({c["format"] for c in cs}) == len(cs)  # not one template
     assert any("EXPLORATION" in c["logline_en"] for c in cs)
+    assert any(e["kind"] == "measured" for c in cs for e in c["evidence"])  # not only secondary evidence
 
 
 def test_validator_rejects_unsupported_claims():

@@ -201,7 +201,8 @@ class YouTubeSource:
             "total_views": _int(st.get("viewCount")),
             "video_count": _int(st.get("videoCount")),
             "baseline_median_views": median(recent_views) if recent_views else None,
-            "baseline_n": len(recent_views or []),
+            # None = never measured; 0..4 = measured but too few recent Shorts for a baseline
+            "baseline_n": None if recent_views is None else len(recent_views),
             "observed_at": now_iso(),
             "raw": {"uploads": item.get("contentDetails", {}).get("relatedPlaylists", {}).get("uploads")},
         }

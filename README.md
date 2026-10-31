@@ -4,10 +4,11 @@ An evidence-based system that finds what people watch on YouTube Shorts and Inst
 learns *why* it works without a predefined content taxonomy, and produces original Korean
 9:16 videos. Nothing is published without human approval.
 
-> **Status (2026-10-31):** the pipeline is implemented, has 38 tests passing, and produced one
-> rendered video that passes QC. Real platform collection is **blocked pending credentials and
-> network access**. See [`reports/2026-10-31-milestone-1.md`](reports/2026-10-31-milestone-1.md)
-> and [`docs/INTEGRATIONS.md`](docs/INTEGRATIONS.md).
+> **Status (2026-10-31):** live on real YouTube data: 417 Shorts from 339 creators, persisted in
+> Supabase, clustered and ranked. Two videos are rendered and pass QC; 45 tests pass. Instagram
+> (Apify) is authenticated but not yet run. See
+> [`reports/2026-10-31-milestone-1.md`](reports/2026-10-31-milestone-1.md) §9 and
+> [`docs/INTEGRATIONS.md`](docs/INTEGRATIONS.md).
 
 ## Quick start (Claude Code Cloud or any Linux box)
 

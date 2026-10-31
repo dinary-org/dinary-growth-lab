@@ -69,6 +69,8 @@ def video_metrics(video: dict, snaps: list[dict], creator: dict | None, now: dat
 
 
 def popularity_score(m: dict[str, Any]) -> float:
+    if m.get("ad_suspect"):
+        return 0.0  # paid reach is not evidence of organic demand
     """Blend of absolute reach and creator-relative outperformance (log scale).
 
     Creator-relative outperformance is weighted higher because it controls for
@@ -79,3 +81,26 @@ def popularity_score(m: dict[str, Any]) -> float:
     if rel is None:
         return absolute / 7  # ~1.0 at 10M views
     return 0.35 * absolute / 7 + 0.65 * (0.5 + max(min(rel, 2), -2) / 4)
+
+
+AD_MIN_VIEWS = 100_000
+AD_LIKE_RATE_FACTOR = 0.1
+
+
+def flag_ad_suspects(metrics: list[dict[str, Any]]) -> float | None:
+    """HEURISTIC: mark likely ad-served (paid) distribution in place; returns the corpus median like rate.
+
+    Paid campaigns show huge view counts with almost no engagement because views come from
+    ad impressions. Observed on the first live run: brand-channel campaigns with 4-11M views
+    and like/view ~0.0000 versus a corpus median of ~0.009. Flagged videos stay in the corpus
+    as content but are not counted as evidence of organic popularity.
+    """
+    rates = sorted(m["like_rate"] for m in metrics if m.get("like_rate") is not None)
+    if len(rates) < 20:
+        return None
+    med = rates[len(rates) // 2]
+    for m in metrics:
+        lr = m.get("like_rate")
+        m["ad_suspect"] = bool((m.get("views") or 0) >= AD_MIN_VIEWS and lr is not None
+                               and (m.get("likes") == 0 or lr < AD_LIKE_RATE_FACTOR * med))
+    return med
