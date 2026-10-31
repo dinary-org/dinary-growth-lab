@@ -1,0 +1,230 @@
+{
+  "concept_id": "c_20261031_hidden_kindness",
+  "opportunity_id": "opp_20261031_a27ec044",
+  "title_ko": "삼각김밥 두 개",
+  "logline_en": "An original, clearly-labelled fictional micro-story: a regular customer's odd habit is misread as stinginess, then the withheld reason reveals hidden kindness.",
+  "evidence": [
+    {
+      "ref": "youtube:w7enlPn5yZU",
+      "kind": "measured",
+      "claim": "'진짜 강함이 뭔지 행동으로 보여준 사람' — 2,003,610 views, 169x its creator's recent-Shorts median (obs. 2026-10-31)."
+    },
+    {
+      "ref": "youtube:ZSCpq3ZrmwE",
+      "kind": "measured",
+      "claim": "'천리마를 구해 오랬더니 죽은 말의 머리를 사 온 이유' — 416,589 views, 50x creator median; title withholds the reason."
+    },
+    {
+      "ref": "youtube:p3m4Nb6kpK0",
+      "kind": "measured",
+      "claim": "'보너스 날마다 아빠가 사 온 크림빵, 반전의 반전이 숨은 정체' — 241,367 views, 3.3x creator median; repeated-habit + hidden-identity title."
+    },
+    {
+      "ref": "youtube:FUL9dgsodEs",
+      "kind": "measured",
+      "claim": "'새벽마다 아들 빵집에서 빵 서른 개를 사 가던 엄마, 몰래 따라간 경로당에서 얼어붙었다' — 179,721 views, 8x creator median; same habit→follow→reveal structure."
+    },
+    {
+      "ref": "youtube:We1Muakcy1A",
+      "kind": "measured",
+      "claim": "'진짜 가치를 보여준 품격' — 1,004,582 views, 68x creator median, 176 s long."
+    },
+    {
+      "ref": "youtube:pPlKaPMNN_w",
+      "kind": "measured",
+      "claim": "Quote-led conflict title with withheld outcome ('…그 집이 누구 건지 몰랐다') — 620,762 views, 12x creator median, 167 s."
+    }
+  ],
+  "measured_facts": [
+    "Topic clusters t30 (7 videos, 7 creators, median 12x creator baseline) and t29 (8 videos, 8 creators, median 9.8x) in run cr_topic_20261031_f84a18f2, all published 2026-10-18..30.",
+    "In t29 every member is 78–178 s long (median ≈ 146 s), longer than the 20–40 s figure claimed by secondary sources.",
+    "Titles in both clusters withhold the outcome or reason (…이유 / 정체 / …자 / 몰랐다); measured on titles only — the videos themselves were not inspected (metadata_only)."
+  ],
+  "hypotheses": [
+    "H1: The habit → misreading → withheld-reason → reveal structure transfers to a short, clearly fictional story and beats our account's median views.",
+    "H2: A 45–60 s version retains a higher average-view-percentage than a 120 s version of the same story (A/B the length; t29 suggests long can work).",
+    "H3: The reveal drives shares ('send to someone') more than likes; share rate above account median."
+  ],
+  "why_now": "Two independent multi-creator clusters (15 videos, 15 creators) built on hidden-motive reveals outperformed their creators' own baselines by a median ~10x in the last two weeks of October 2026. Caveats: metadata-only evidence, one collection day, velocity not yet measured.",
+  "creative_principle": "Show a repeated, slightly odd behaviour; let the viewer misjudge it; withhold the reason in the title and middle; pay off with a small, warm motive that recasts every earlier scene.",
+  "originality_notes": "Original fictional story (no source plot, characters or lines reused) and on-screen disclosure '이 이야기는 창작입니다'. Several cluster members present unverified stories as true; we deliberately do not.",
+  "format": "narrated text-story with scene cards, withheld-reveal structure, fiction disclosure",
+  "duration_s": 46.0,
+  "hooks_ko": [
+    "매일 밤 11시, 삼각김밥 두 개만 사 가던 할아버지",
+    "왜 항상 두 개였는지, 석 달 만에 알았다",
+    "인색한 줄 알았던 단골의 진짜 이유"
+  ],
+  "script_ko": [
+    {
+      "t": 0.0,
+      "speaker": "내레이션",
+      "line_ko": "매일 밤 열한 시. 삼각김밥 두 개."
+    },
+    {
+      "t": 4.5,
+      "speaker": "내레이션",
+      "line_ko": "할아버지는 늘 같은 것만 샀다."
+    },
+    {
+      "t": 9.0,
+      "speaker": "내레이션",
+      "line_ko": "할인 스티커 붙은 것만 골라서."
+    },
+    {
+      "t": 13.5,
+      "speaker": "내레이션",
+      "line_ko": "봉투도 필요 없다고 했다."
+    },
+    {
+      "t": 18.0,
+      "speaker": "내레이션",
+      "line_ko": "솔직히 좀 짠돌이인 줄 알았다."
+    },
+    {
+      "t": 22.5,
+      "speaker": "내레이션",
+      "line_ko": "그러다 석 달째 되던 날."
+    },
+    {
+      "t": 27.0,
+      "speaker": "내레이션",
+      "line_ko": "하나를 계산대에 두고 갔다."
+    },
+    {
+      "t": 31.5,
+      "speaker": "내레이션",
+      "line_ko": "야간 알바 학생, 밥은 먹고 해요."
+    },
+    {
+      "t": 37.0,
+      "speaker": "내레이션",
+      "line_ko": "두 개 중 하나는 처음부터 내 거였다."
+    },
+    {
+      "t": 42.0,
+      "speaker": "내레이션",
+      "line_ko": "이 이야기는 창작입니다."
+    }
+  ],
+  "storyboard": [
+    {
+      "scene": 1,
+      "start_s": 0.0,
+      "end_s": 4.5,
+      "visual": "23:00 clock + '삼각김밥 ×2'",
+      "on_screen_text_ko": "매일 밤 11시",
+      "audio": "VO + tick",
+      "edit": "punch-in"
+    },
+    {
+      "scene": 2,
+      "start_s": 4.5,
+      "end_s": 9.0,
+      "visual": "card: 늘 같은 것",
+      "on_screen_text_ko": "늘 같은 것만",
+      "audio": "VO",
+      "edit": "slide"
+    },
+    {
+      "scene": 3,
+      "start_s": 9.0,
+      "end_s": 13.5,
+      "visual": "big text: 할인 스티커",
+      "on_screen_text_ko": "할인 스티커만",
+      "audio": "VO",
+      "edit": "punch-in"
+    },
+    {
+      "scene": 4,
+      "start_s": 13.5,
+      "end_s": 18.0,
+      "visual": "big text: 봉투 X",
+      "on_screen_text_ko": "봉투는 필요 없다고",
+      "audio": "VO",
+      "edit": "slide"
+    },
+    {
+      "scene": 5,
+      "start_s": 18.0,
+      "end_s": 22.5,
+      "visual": "split: 짠돌이? | 단골?",
+      "on_screen_text_ko": "짠돌이? | 단골?",
+      "audio": "VO",
+      "edit": "split"
+    },
+    {
+      "scene": 6,
+      "start_s": 22.5,
+      "end_s": 27.0,
+      "visual": "clock: 석 달째",
+      "on_screen_text_ko": "석 달째 되던 날",
+      "audio": "VO + riser",
+      "edit": "drift"
+    },
+    {
+      "scene": 7,
+      "start_s": 27.0,
+      "end_s": 31.5,
+      "visual": "big text: 하나를 두고 갔다",
+      "on_screen_text_ko": "하나를 두고 갔다",
+      "audio": "VO + hit",
+      "edit": "shake"
+    },
+    {
+      "scene": 8,
+      "start_s": 31.5,
+      "end_s": 37.0,
+      "visual": "white note card (handwritten-style)",
+      "on_screen_text_ko": "야간 알바 학생, 밥은 먹고 해요",
+      "audio": "VO + ding",
+      "edit": "card reveal"
+    },
+    {
+      "scene": 9,
+      "start_s": 37.0,
+      "end_s": 42.0,
+      "visual": "reveal text: 처음부터 내 거였다",
+      "on_screen_text_ko": "두 개 중 하나는\n처음부터 내 거였다",
+      "audio": "VO",
+      "edit": "wipe reveal"
+    },
+    {
+      "scene": 10,
+      "start_s": 42.0,
+      "end_s": 46.0,
+      "visual": "disclosure card",
+      "on_screen_text_ko": "이 이야기는 창작입니다",
+      "audio": "music out",
+      "edit": "fade"
+    }
+  ],
+  "edit_plan": "Even 4.5 s beats during the misreading (scenes 1–5), a slow drift at the turn (6), a hard shake on the act (7), then a longer, quiet reveal (8–9). The disclosure card closes.",
+  "audio_plan": "Soft synthesized pad at -26 dB, riser into scene 7, single hit + ding on the reveal; master -14 LUFS. Placeholder espeak-ng voice — replace with a warm natural Korean voice before publishing.",
+  "assets_required": [
+    {
+      "asset": "Narration",
+      "source": "espeak-ng placeholder → licensed TTS / in-house voice",
+      "license": "tool output / commercial TTS licence"
+    },
+    {
+      "asset": "Music + SFX",
+      "source": "synthesized in render pipeline",
+      "license": "original"
+    },
+    {
+      "asset": "Font",
+      "source": "Noto Sans CJK KR",
+      "license": "SIL OFL 1.1"
+    }
+  ],
+  "difficulty": "low",
+  "est_cost_usd": 0.0,
+  "est_hours": 1.5,
+  "success_metric": "Views and share rate above our account median within 72 h; for H2, compare average view % of a 46 s cut against a 120 s cut.",
+  "risks": [
+    "Robotic placeholder voice undermines an emotional format",
+    "Evidence is metadata-only from one collection day; the cluster may be a short-lived recommendation pocket",
+    "Senior-targeted (#시니어드라마) audience may not match ours"
+  ]
+}

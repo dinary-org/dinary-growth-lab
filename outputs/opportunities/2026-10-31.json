@@ -1,0 +1,425 @@
+[
+  {
+    "topic_cluster": "t1",
+    "topic_label": "#한양사 · #남대문시장 · 회현역",
+    "format_cluster": "*",
+    "format_label": "any format",
+    "score": 0.6689,
+    "score_low": 0.5527,
+    "score_high": 0.6878,
+    "components": {
+      "outperformance": 0.972,
+      "momentum": 0.926,
+      "independence": 0.833,
+      "novelty": 0.533,
+      "saturation": 0.5,
+      "shareability": 0.107,
+      "feasibility": 0.5,
+      "own_history": 0.5
+    },
+    "evidence": [
+      {
+        "platform": "youtube",
+        "video_id": "qCRNgcF2ifM",
+        "views": 1203102,
+        "log_outperformance": 2.2447390580620783,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "I4L-FhvAPs4",
+        "views": 326193,
+        "log_outperformance": 2.318961626499115,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "gQDZaqmH7Js",
+        "views": 244322,
+        "log_outperformance": 2.261183775360155,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "TD_hZCcBgFk",
+        "views": 33128,
+        "log_outperformance": 1.5289822511934967,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "Eciw9Q2rKUA",
+        "views": 214544,
+        "log_outperformance": 1.1853593420906607,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "ya67LuMso9k",
+        "views": 200485,
+        "log_outperformance": 0.6605504522712703,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      }
+    ],
+    "n_members": 6,
+    "caveats": [
+      "query echo: cluster size reflects our search, not prevalence"
+    ],
+    "is_exploration": false,
+    "selection": "exploit: highest expected score",
+    "opportunity_id": "opp_20261031_8b9171ee"
+  },
+  {
+    "topic_cluster": "t31",
+    "topic_label": "대한민국 · 서비스 · 통해",
+    "format_cluster": "*",
+    "format_label": "any format",
+    "score": 0.6536,
+    "score_low": 0.512,
+    "score_high": 0.6707,
+    "components": {
+      "outperformance": 0.82,
+      "momentum": 0.85,
+      "independence": 0.8,
+      "novelty": 0.52,
+      "saturation": 0.022,
+      "shareability": 0.077,
+      "feasibility": 0.5,
+      "own_history": 0.5
+    },
+    "evidence": [
+      {
+        "platform": "youtube",
+        "video_id": "076fzP2JxjM",
+        "views": 237952,
+        "log_outperformance": 1.4757691174364864,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "MY0lS-q32BM",
+        "views": 72504,
+        "log_outperformance": 1.3527144434168277,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "N6__fopXK7Q",
+        "views": 117489,
+        "log_outperformance": 1.2092138592986337,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "B2BAf8AaMHE",
+        "views": 64396,
+        "log_outperformance": -0.30022671518089866,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "CUJ0cebnthM",
+        "views": 3980730,
+        "log_outperformance": 0.8007574163039322,
+        "access_level": "metadata_only",
+        "ad_suspect": true
+      }
+    ],
+    "n_members": 5,
+    "caveats": [
+      "1 member(s) look ad-served (excluded as evidence)"
+    ],
+    "is_exploration": false,
+    "selection": "exploit: highest expected score",
+    "opportunity_id": "opp_20261031_27d86944"
+  },
+  {
+    "topic_cluster": "t30",
+    "topic_label": "아빠가 · 아빠 · 따뜻한",
+    "format_cluster": "*",
+    "format_label": "any format",
+    "score": 0.5951,
+    "score_low": 0.4926,
+    "score_high": 0.6511,
+    "components": {
+      "outperformance": 0.773,
+      "momentum": 0.553,
+      "independence": 0.857,
+      "novelty": 0.429,
+      "saturation": 0.044,
+      "shareability": 0.148,
+      "feasibility": 0.5,
+      "own_history": 0.5
+    },
+    "evidence": [
+      {
+        "platform": "youtube",
+        "video_id": "w7enlPn5yZU",
+        "views": 2003610,
+        "log_outperformance": 2.228553415327462,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "8nMHqjDDtP8",
+        "views": 3816455,
+        "log_outperformance": 1.7330032193221,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "ZSCpq3ZrmwE",
+        "views": 416589,
+        "log_outperformance": 1.7029391564679488,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "MoFqI9nfj3g",
+        "views": 401163,
+        "log_outperformance": 1.0902908998290306,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "69TLu1tjDYY",
+        "views": 902188,
+        "log_outperformance": 0.3532755387311564,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "p3m4Nb6kpK0",
+        "views": 241367,
+        "log_outperformance": 0.512211408053797,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "PmOmRvjWtXI",
+        "views": 39334,
+        "log_outperformance": 0.005108752470255806,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      }
+    ],
+    "n_members": 7,
+    "caveats": [],
+    "is_exploration": false,
+    "selection": "exploit: highest expected score",
+    "opportunity_id": "opp_20261031_a27ec044"
+  },
+  {
+    "topic_cluster": "t5",
+    "topic_label": "#jtbc · 실시간으로 · 시청하기",
+    "format_cluster": "f4",
+    "format_label": "high title_has_question",
+    "score": 0.5831,
+    "score_low": 0.5271,
+    "score_high": 0.6409,
+    "components": {
+      "outperformance": 1.0,
+      "momentum": 0.642,
+      "independence": 0.0,
+      "novelty": 0.6,
+      "saturation": 0.002,
+      "shareability": 0.132,
+      "feasibility": 0.6,
+      "own_history": 0.5
+    },
+    "evidence": [
+      {
+        "platform": "youtube",
+        "video_id": "y6jVSkYCgNg",
+        "views": 172905,
+        "log_outperformance": 2.000769272581138,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "SwI-0IeCDdI",
+        "views": 2432117,
+        "log_outperformance": 3.1489438505642964,
+        "access_level": "metadata_only",
+        "ad_suspect": true
+      }
+    ],
+    "n_members": 2,
+    "caveats": [
+      "1 member(s) look ad-served (excluded as evidence)",
+      "single creator: not independent repetition"
+    ],
+    "is_exploration": false,
+    "selection": "exploit: highest expected score",
+    "opportunity_id": "opp_20261031_43f8923d"
+  },
+  {
+    "topic_cluster": "t17",
+    "topic_label": "근데 · 미국",
+    "format_cluster": "f0",
+    "format_label": "low title_has_number, low duration_s",
+    "score": 0.4772,
+    "score_low": 0.3851,
+    "score_high": 0.5742,
+    "components": {
+      "outperformance": 0.498,
+      "momentum": 0.481,
+      "independence": 0.6,
+      "novelty": 0.8,
+      "saturation": 0.5,
+      "shareability": 0.208,
+      "feasibility": 0.6,
+      "own_history": 0.5
+    },
+    "evidence": [
+      {
+        "platform": "youtube",
+        "video_id": "3HHStuj5jgU",
+        "views": 233490,
+        "log_outperformance": 1.7336921223237616,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "aN0YWBIVKlA",
+        "views": 437385,
+        "log_outperformance": -0.05954113306518978,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "mjrcaF_nC2g",
+        "views": 295447,
+        "log_outperformance": -0.03460852562291544,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "djO6WKAesO4",
+        "views": 88690,
+        "log_outperformance": 0.02211895523109597,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      }
+    ],
+    "n_members": 4,
+    "caveats": [
+      "query echo: cluster size reflects our search, not prevalence"
+    ],
+    "is_exploration": true,
+    "selection": "explore: Thompson draw over bootstrap",
+    "opportunity_id": "opp_20261031_90c5835a"
+  },
+  {
+    "topic_cluster": "t25",
+    "topic_label": "youtube · provided · released",
+    "format_cluster": "f3",
+    "format_label": "high duration_s, low title_len, low title_has_number",
+    "score": 0.5325,
+    "score_low": 0.4734,
+    "score_high": 0.5985,
+    "components": {
+      "outperformance": 0.429,
+      "momentum": 0.816,
+      "independence": 0.923,
+      "novelty": 0.6,
+      "saturation": 0.5,
+      "shareability": 0.158,
+      "feasibility": 0.6,
+      "own_history": 0.5
+    },
+    "evidence": [
+      {
+        "platform": "youtube",
+        "video_id": "r2he71F8J_A",
+        "views": 826846,
+        "log_outperformance": null,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "XeYpgXQQi-8",
+        "views": 136222,
+        "log_outperformance": 1.358785631048796,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "NdA116ebez4",
+        "views": 165978,
+        "log_outperformance": null,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "Qm6q2WES9rg",
+        "views": 87291,
+        "log_outperformance": 0.8149892337472807,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "qLawD-kBQ1E",
+        "views": 141176,
+        "log_outperformance": 0.5102674988976157,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "l8becO8OYoU",
+        "views": 1122811,
+        "log_outperformance": 0.006486543665848667,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "F4rTbEI7c88",
+        "views": 98073,
+        "log_outperformance": 0.10354297634654208,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      },
+      {
+        "platform": "youtube",
+        "video_id": "C0Z3iKSkXOA",
+        "views": 289198,
+        "log_outperformance": -0.36727072740267597,
+        "access_level": "metadata_only",
+        "ad_suspect": false
+      }
+    ],
+    "n_members": 13,
+    "caveats": [
+      "query echo: cluster size reflects our search, not prevalence"
+    ],
+    "is_exploration": true,
+    "selection": "explore: Thompson draw over bootstrap",
+    "opportunity_id": "opp_20261031_c4ea9497"
+  }
+]

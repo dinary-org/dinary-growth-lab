@@ -1,0 +1,95 @@
+{
+  "concept_id": "c_20261031_one_number",
+  "opportunity_id": "opp_provisional_secondary_04",
+  "title_ko": "숫자 하나로 보는 한국",
+  "logline_en": "EXPLORATION SLOT: an animated one-statistic explainer — a single surprising, officially sourced number about life in Korea, revealed after a viewer guess.",
+  "evidence": [
+    {
+      "ref": "secondary:sec_ampm_collab_asia",
+      "kind": "secondary",
+      "claim": "Korean agency analysis reports Shorts as the main discovery entry point for channels (88.2% of views)."
+    },
+    {
+      "ref": "secondary:sec_anijam_formats",
+      "kind": "secondary",
+      "claim": "Vendor roundup lists animated formats among trending Shorts in 2026."
+    }
+  ],
+  "measured_facts": [],
+  "hypotheses": [
+    "H1: A 'guess the number' gap followed by an official citation earns more saves than our entertainment-only videos (information value).",
+    "H2: This format underperforms on raw views but over-performs on follows per 1k views (audience quality)."
+  ],
+  "why_now": "PROVISIONAL: no platform-measured candidates could be collected in this session (YouTube key missing, Instagram/Apify hosts blocked); evidence below is secondary and unverified. Re-rank against measured clusters before production spend. Deliberate exploration outside entertainment formats so the system does not only learn from one cluster.",
+  "creative_principle": "Curiosity gap with a verifiable payoff: ask, let the viewer guess, reveal with the source on screen.",
+  "originality_notes": "Statistics come from official sources (e.g. KOSIS, Statistics Korea), cited on screen; all visuals are original motion graphics.",
+  "format": "motion-graphics explainer with guess-then-reveal",
+  "duration_s": 20.0,
+  "hooks_ko": [
+    "한국인이 1년에 ○○ 하는 횟수, 맞혀보세요",
+    "생각보다 0이 하나 더 많음",
+    "이 숫자 보고 놀라면 정상"
+  ],
+  "script_ko": [
+    {
+      "t": 0.0,
+      "speaker": "내레이션",
+      "line_ko": "한국 사람이 일 년에 이걸 몇 번이나 할까요?"
+    },
+    {
+      "t": 6.0,
+      "speaker": "내레이션",
+      "line_ko": "정답은."
+    },
+    {
+      "t": 14.0,
+      "speaker": "내레이션",
+      "line_ko": "출처는 화면에. 다음 숫자 궁금하면 저장."
+    }
+  ],
+  "storyboard": [
+    {
+      "scene": 1,
+      "start_s": 0.0,
+      "end_s": 6.0,
+      "visual": "Question card with blank number",
+      "on_screen_text_ko": "1년에 몇 번?",
+      "audio": "VO",
+      "edit": "punch-in"
+    },
+    {
+      "scene": 2,
+      "start_s": 6.0,
+      "end_s": 14.0,
+      "visual": "Number counts up, comparison bar",
+      "on_screen_text_ko": "(공식 통계 수치)",
+      "audio": "VO + riser",
+      "edit": "count-up"
+    },
+    {
+      "scene": 3,
+      "start_s": 14.0,
+      "end_s": 20.0,
+      "visual": "Source citation + save prompt",
+      "on_screen_text_ko": "출처: (기관, 연도)",
+      "audio": "VO",
+      "edit": "card"
+    }
+  ],
+  "edit_plan": "Three beats only; the count-up animation carries the middle.",
+  "audio_plan": "VO + synthesized riser; -14 LUFS.",
+  "assets_required": [
+    {
+      "asset": "One official statistic with citation",
+      "source": "KOSIS / public agency release",
+      "license": "public data, cite source"
+    }
+  ],
+  "difficulty": "low",
+  "est_cost_usd": 0.0,
+  "est_hours": 2.0,
+  "success_metric": "Save rate and follows per 1k views above account median (even if views are below median).",
+  "risks": [
+    "Must verify the statistic from the primary source before production — none is asserted in this brief"
+  ]
+}

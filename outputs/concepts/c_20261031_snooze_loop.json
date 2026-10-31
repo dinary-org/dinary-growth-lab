@@ -1,0 +1,210 @@
+{
+  "concept_id": "c_20261031_snooze_loop",
+  "opportunity_id": "opp_provisional_secondary_01",
+  "title_ko": "5분만 더",
+  "logline_en": "A timestamp-driven micro-story of the '5 more minutes' snooze spiral whose last frame is its first frame, so the video loops seamlessly.",
+  "evidence": [
+    {
+      "ref": "secondary:sec_later_2026_10",
+      "kind": "secondary",
+      "claim": "Third-party roundup reports a 'vlog timestamps' format trending on Reels in late Oct 2026."
+    },
+    {
+      "ref": "secondary:sec_shorts_loops_length",
+      "kind": "secondary",
+      "claim": "Guides claim rewatch loops matter more than raw length; 20-40 s cited as common for viral Shorts."
+    },
+    {
+      "ref": "secondary:sec_ig_shares_saves",
+      "kind": "secondary",
+      "claim": "Guide claims DM shares/saves weigh more than likes on Reels."
+    }
+  ],
+  "measured_facts": [],
+  "hypotheses": [
+    "H1: Ending on the exact opening frame (07:00) raises average-view-percentage above our account median (replay signal).",
+    "H2: A universally relatable failure (snooze spiral) earns a share rate above our account median because viewers send it to a specific person.",
+    "H3: A large on-screen timestamp from frame 0 keeps more viewers past 3 s than a text-question opening (test against concept c_20261031_sound_quiz)."
+  ],
+  "why_now": "PROVISIONAL: no platform-measured candidates could be collected in this session (YouTube key missing, Instagram/Apify hosts blocked); evidence below is secondary and unverified. Re-rank against measured clusters before production spend. Timestamp-led storytelling is reported as a current Reels format and needs no trending audio licence.",
+  "creative_principle": "Use time as the narrative engine: each beat is a visible clock jump, tension rises with the size of the jump, and the punchline resets the clock so the end is the beginning.",
+  "originality_notes": "No source video was viewed or copied; the format reference is a third-party text description only. Story, script, graphics, synthesized music and TTS narration are produced from scratch by us.",
+  "format": "kinetic typography + clock graphics, voice-over narration, burned-in captions, seamless loop",
+  "duration_s": 24.0,
+  "hooks_ko": [
+    "알람 끄고 '5분만'이 진짜 5분인 사람 없음",
+    "07:00 → 07:52, 그 사이에 무슨 일이",
+    "이거 보고 찔리면 깨워야 할 사람한테 보내기"
+  ],
+  "script_ko": [
+    {
+      "t": 0.0,
+      "speaker": "내레이션",
+      "line_ko": "일곱 시. 알람이 울린다."
+    },
+    {
+      "t": 2.4,
+      "speaker": "내레이션",
+      "line_ko": "딱 오 분만 더."
+    },
+    {
+      "t": 5.0,
+      "speaker": "내레이션",
+      "line_ko": "괜찮아. 아직 여유 있어."
+    },
+    {
+      "t": 7.4,
+      "speaker": "내레이션",
+      "line_ko": "오 분만 더. 진짜 마지막."
+    },
+    {
+      "t": 9.8,
+      "speaker": "내레이션",
+      "line_ko": "이번엔 알람도 못 들었다."
+    },
+    {
+      "t": 12.0,
+      "speaker": "내레이션",
+      "line_ko": "잠깐. 일곱 시 오십이 분?"
+    },
+    {
+      "t": 14.6,
+      "speaker": "내레이션",
+      "line_ko": "양치하면서 세수하고 옷까지."
+    },
+    {
+      "t": 17.6,
+      "speaker": "내레이션",
+      "line_ko": "교훈. 내일은 진짜 일찍 잔다."
+    },
+    {
+      "t": 20.4,
+      "speaker": "내레이션",
+      "line_ko": "그날 밤 열한 시 오십팔 분."
+    },
+    {
+      "t": 22.6,
+      "speaker": "내레이션",
+      "line_ko": "일곱 시."
+    }
+  ],
+  "storyboard": [
+    {
+      "scene": 1,
+      "start_s": 0.0,
+      "end_s": 2.4,
+      "visual": "Huge 07:00 clock, blinking colon, dark blue",
+      "on_screen_text_ko": "07:00 / 오늘은 진짜 일찍 일어난다",
+      "audio": "VO + tick",
+      "edit": "punch-in on frame 0"
+    },
+    {
+      "scene": 2,
+      "start_s": 2.4,
+      "end_s": 5.0,
+      "visual": "07:01 clock",
+      "on_screen_text_ko": "딱 5분만…",
+      "audio": "VO",
+      "edit": "slide up"
+    },
+    {
+      "scene": 3,
+      "start_s": 5.0,
+      "end_s": 7.4,
+      "visual": "07:06 clock, warmer bg",
+      "on_screen_text_ko": "아직 여유 있음",
+      "audio": "VO",
+      "edit": "punch-in"
+    },
+    {
+      "scene": 4,
+      "start_s": 7.4,
+      "end_s": 9.8,
+      "visual": "07:11 clock",
+      "on_screen_text_ko": "진짜 마지막",
+      "audio": "VO",
+      "edit": "punch-in"
+    },
+    {
+      "scene": 5,
+      "start_s": 9.8,
+      "end_s": 12.0,
+      "visual": "07:16 clock slowly drifting (sleep)",
+      "on_screen_text_ko": "(알람 못 들음)",
+      "audio": "VO, music ducks",
+      "edit": "slow drift"
+    },
+    {
+      "scene": 6,
+      "start_s": 12.0,
+      "end_s": 14.6,
+      "visual": "07:52 on red, screen shake",
+      "on_screen_text_ko": "07:52?!",
+      "audio": "VO + hit",
+      "edit": "hard cut + shake"
+    },
+    {
+      "scene": 7,
+      "start_s": 14.6,
+      "end_s": 17.6,
+      "visual": "Split screen 양치 | 세수",
+      "on_screen_text_ko": "양치 | 세수",
+      "audio": "VO + whoosh",
+      "edit": "split layout"
+    },
+    {
+      "scene": 8,
+      "start_s": 17.6,
+      "end_s": 20.4,
+      "visual": "White card 'lesson'",
+      "on_screen_text_ko": "오늘의 교훈: 내일은 진짜 일찍 잔다",
+      "audio": "VO + ding",
+      "edit": "card slide"
+    },
+    {
+      "scene": 9,
+      "start_s": 20.4,
+      "end_s": 22.6,
+      "visual": "23:58 clock at night",
+      "on_screen_text_ko": "그날 밤 / 쇼츠 하나만 더…",
+      "audio": "VO",
+      "edit": "reveal"
+    },
+    {
+      "scene": 10,
+      "start_s": 22.6,
+      "end_s": 24.0,
+      "visual": "07:00 — identical to scene 1",
+      "on_screen_text_ko": "07:00",
+      "audio": "VO + tick",
+      "edit": "punch-in; matches frame 0 for loop"
+    }
+  ],
+  "edit_plan": "Cut on every clock change (~2.4 s average shot, accelerating toward the 07:52 reveal). Scene 10 reuses scene 1's exact layout so the platform's auto-replay looks continuous.",
+  "audio_plan": "Synthesized pad + 112 BPM pulse at -24 dB under VO; SFX ticks, hit and whoosh generated in FFmpeg; master normalised to -14 LUFS, true peak ≤ -1.5 dBFS. Placeholder espeak-ng voice; replace with a licensed natural Korean TTS or a human read before publishing.",
+  "assets_required": [
+    {
+      "asset": "Korean narration",
+      "source": "espeak-ng (placeholder) → licensed TTS or in-house voice",
+      "license": "GPL tool output / commercial TTS licence"
+    },
+    {
+      "asset": "Music bed + SFX",
+      "source": "synthesized with FFmpeg in render pipeline",
+      "license": "original"
+    },
+    {
+      "asset": "Font",
+      "source": "Noto Sans CJK KR",
+      "license": "SIL OFL 1.1"
+    }
+  ],
+  "difficulty": "low",
+  "est_cost_usd": 0.0,
+  "est_hours": 1.5,
+  "success_metric": "Average view percentage ≥ 100% (indicates replays) and share rate above account median within 72 h on both platforms.",
+  "risks": [
+    "Robotic placeholder voice will depress retention if published as-is",
+    "Relatable-humor saturation is unknown without measured cluster data"
+  ]
+}

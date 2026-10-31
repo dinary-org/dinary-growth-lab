@@ -1,0 +1,15 @@
+{
+  "_note": "Shape follows the documented YouTube Data API v3 videos.list response; values are placeholders for parser tests, not real videos.",
+  "items": [
+    {"id": "TESTID00001",
+     "snippet": {"publishedAt": "2026-10-29T09:00:00Z", "channelId": "UCtestchannel", "title": "테스트 제목 #테스트태그 #Shorts",
+                 "description": "설명 #둘째태그", "channelTitle": "Test Channel", "tags": ["a", "b"], "categoryId": "22",
+                 "defaultAudioLanguage": "ko", "liveBroadcastContent": "none"},
+     "contentDetails": {"duration": "PT45S"},
+     "statistics": {"viewCount": "1200", "likeCount": "30", "commentCount": "4"}},
+    {"id": "TESTID00002",
+     "snippet": {"publishedAt": "2026-10-20T09:00:00Z", "channelId": "UCtestchannel", "title": "long", "description": "", "channelTitle": "Test Channel"},
+     "contentDetails": {"duration": "PT12M3S"},
+     "statistics": {"viewCount": "5"}}
+  ]
+}

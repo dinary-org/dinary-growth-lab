@@ -1,0 +1,273 @@
+{
+ "fps": 30,
+ "duration": 24.0,
+ "captions": [
+  {
+   "start": 0.08,
+   "end": 1.977,
+   "text": "일곱 시. 알람이 울린다."
+  },
+  {
+   "start": 2.48,
+   "end": 3.725,
+   "text": "딱 오 분만 더."
+  },
+  {
+   "start": 5.08,
+   "end": 7.064,
+   "text": "괜찮아. 아직 여유 있어."
+  },
+  {
+   "start": 7.48,
+   "end": 9.588,
+   "text": "오 분만 더. 진짜 마지막."
+  },
+  {
+   "start": 9.88,
+   "end": 11.592,
+   "text": "이번엔 알람도 못 들었다."
+  },
+  {
+   "start": 12.08,
+   "end": 14.387,
+   "text": "잠깐. 일곱 시 오십이 분?"
+  },
+  {
+   "start": 14.68,
+   "end": 16.961,
+   "text": "양치하면서 세수하고 옷까지."
+  },
+  {
+   "start": 17.68,
+   "end": 19.835,
+   "text": "교훈. 내일은 진짜 일찍"
+  },
+  {
+   "start": 19.835,
+   "end": 20.332,
+   "text": "잔다."
+  },
+  {
+   "start": 20.48,
+   "end": 22.764,
+   "text": "그날 밤 열한 시 오십팔 분."
+  },
+  {
+   "start": 22.68,
+   "end": 23.585,
+   "text": "일곱 시."
+  }
+ ],
+ "audio": [
+  {
+   "src": "c_20261031_snooze_loop/music.wav",
+   "start": 0,
+   "volume": 0.05011872336272722
+  },
+  {
+   "src": "c_20261031_snooze_loop/sfx_0.wav",
+   "start": 0.0,
+   "volume": 0.5
+  },
+  {
+   "src": "c_20261031_snooze_loop/vo_0.wav",
+   "start": 0.08,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_snooze_loop/vo_1.wav",
+   "start": 2.48,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_snooze_loop/sfx_2.wav",
+   "start": 5.0,
+   "volume": 0.5
+  },
+  {
+   "src": "c_20261031_snooze_loop/vo_2.wav",
+   "start": 5.08,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_snooze_loop/sfx_3.wav",
+   "start": 7.4,
+   "volume": 0.5
+  },
+  {
+   "src": "c_20261031_snooze_loop/vo_3.wav",
+   "start": 7.48,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_snooze_loop/vo_4.wav",
+   "start": 9.88,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_snooze_loop/sfx_5.wav",
+   "start": 12.0,
+   "volume": 0.5
+  },
+  {
+   "src": "c_20261031_snooze_loop/vo_5.wav",
+   "start": 12.08,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_snooze_loop/sfx_6.wav",
+   "start": 14.6,
+   "volume": 0.5
+  },
+  {
+   "src": "c_20261031_snooze_loop/vo_6.wav",
+   "start": 14.68,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_snooze_loop/sfx_7.wav",
+   "start": 17.6,
+   "volume": 0.5
+  },
+  {
+   "src": "c_20261031_snooze_loop/vo_7.wav",
+   "start": 17.68,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_snooze_loop/vo_8.wav",
+   "start": 20.479999999999997,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_snooze_loop/sfx_9.wav",
+   "start": 22.6,
+   "volume": 0.5
+  },
+  {
+   "src": "c_20261031_snooze_loop/vo_9.wav",
+   "start": 22.68,
+   "volume": 1.0
+  }
+ ],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.4,
+   "layout": "clock",
+   "motion": "punchIn",
+   "bg": "linear-gradient(180deg,#0f1b3d,#1d2f6b)",
+   "accent": "#ffd400",
+   "kicker": "알람",
+   "main": "07:00",
+   "sub": "오늘은 진짜 일찍 일어난다",
+   "progress": 0.0
+  },
+  {
+   "start": 2.4,
+   "end": 5.0,
+   "layout": "clock",
+   "motion": "slideUp",
+   "bg": "linear-gradient(180deg,#14234d,#243a7d)",
+   "accent": "#ffd400",
+   "kicker": "스누즈 1",
+   "main": "07:01",
+   "sub": "딱 5분만…",
+   "progress": 0.02
+  },
+  {
+   "start": 5.0,
+   "end": 7.4,
+   "layout": "clock",
+   "motion": "punchIn",
+   "bg": "linear-gradient(180deg,#2b2a5c,#46387d)",
+   "accent": "#ffd400",
+   "kicker": "스누즈 2",
+   "main": "07:06",
+   "sub": "아직 여유 있음",
+   "progress": 0.12
+  },
+  {
+   "start": 7.4,
+   "end": 9.8,
+   "layout": "clock",
+   "motion": "punchIn",
+   "bg": "linear-gradient(180deg,#45305f,#6a3d7d)",
+   "accent": "#ffd400",
+   "kicker": "스누즈 3",
+   "main": "07:11",
+   "sub": "진짜 마지막",
+   "progress": 0.22
+  },
+  {
+   "start": 9.8,
+   "end": 12.0,
+   "layout": "clock",
+   "motion": "drift",
+   "bg": "linear-gradient(180deg,#1a1a2a,#2c2440)",
+   "fg": "#9a93b8",
+   "accent": "#7c7399",
+   "kicker": "zzz",
+   "main": "07:16",
+   "sub": "(알람 못 들음)",
+   "progress": 0.32
+  },
+  {
+   "start": 12.0,
+   "end": 14.6,
+   "layout": "clock",
+   "motion": "shake",
+   "bg": "#d7261e",
+   "accent": "#ffffff",
+   "kicker": "잠깐만",
+   "main": "07:52",
+   "sub": "?!?!",
+   "progress": 0.87
+  },
+  {
+   "start": 14.6,
+   "end": 17.6,
+   "layout": "split",
+   "motion": "slideUp",
+   "bg": "#1f2030",
+   "accent": "#ff5a36",
+   "main": "양치하면서|세수하면서",
+   "sub": "옷까지 입기",
+   "progress": 0.95
+  },
+  {
+   "start": 17.6,
+   "end": 20.4,
+   "layout": "card",
+   "motion": "slideUp",
+   "bg": "linear-gradient(180deg,#ff8a3d,#ff5a36)",
+   "accent": "#ff5a36",
+   "kicker": "오늘의 교훈",
+   "main": "내일은\n진짜 일찍 잔다",
+   "progress": 1.0
+  },
+  {
+   "start": 20.4,
+   "end": 22.6,
+   "layout": "reveal",
+   "motion": "none",
+   "bg": "linear-gradient(180deg,#1a2352,#2b2f66)",
+   "accent": "#7fd1ff",
+   "kicker": "그날 밤",
+   "main": "23:58",
+   "sub": "쇼츠 하나만 더…"
+  },
+  {
+   "start": 22.6,
+   "end": 24.0,
+   "layout": "clock",
+   "motion": "punchIn",
+   "bg": "linear-gradient(180deg,#0f1b3d,#1d2f6b)",
+   "accent": "#ffd400",
+   "kicker": "알람",
+   "main": "07:00",
+   "sub": "오늘은 진짜 일찍 일어난다",
+   "progress": 0.0
+  }
+ ]
+}

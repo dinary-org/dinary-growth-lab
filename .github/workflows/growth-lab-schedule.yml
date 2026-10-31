@@ -1,0 +1,60 @@
+# Scheduled data jobs. GitHub Actions is the reliable clock; Claude Code cloud
+# scheduled tasks handle the judgement steps (labelling, concepts) via skills.
+# Every job skips cleanly when its secrets are not configured.
+name: growth-lab-schedule
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # snapshots every 6 h (velocity needs repeated observations)
+    - cron: "41 21 * * *"    # daily discovery + clustering, 06:41 KST
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "status | discover | snapshot | cluster"
+        default: status
+
+concurrency:
+  group: growth-lab
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+      APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      SUPABASE_SCHEMA: growth_lab
+      YOUTUBE_DAILY_QUOTA: "8000"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -e '.[dev,cloud]'
+      - name: Decide job
+        id: pick
+        run: |
+          job="${{ github.event.inputs.job }}"
+          if [ -z "$job" ]; then
+            if [ "${{ github.event.schedule }}" = "41 21 * * *" ]; then job=discover; else job=snapshot; fi
+          fi
+          echo "job=$job" >> "$GITHUB_OUTPUT"
+      - name: Integration status
+        run: dgl status
+      - name: Restore working set from Supabase (runner disk is ephemeral)
+        if: env.SUPABASE_URL != ''
+        run: dgl pull
+      - name: Discover
+        if: steps.pick.outputs.job == 'discover' && env.YOUTUBE_API_KEY != ''
+        run: dgl discover --platform youtube --queries 6 --chart-pages 4 --days 14
+      - name: Snapshot
+        if: steps.pick.outputs.job == 'snapshot' && env.YOUTUBE_API_KEY != ''
+        run: dgl snapshot --quota 400
+      - name: Cluster
+        if: (steps.pick.outputs.job == 'discover' || steps.pick.outputs.job == 'cluster') && env.SUPABASE_URL != ''
+        run: dgl cluster --out cluster.json
+      - name: Skip notice
+        if: env.YOUTUBE_API_KEY == '' || env.SUPABASE_URL == ''
+        run: echo "::warning::YOUTUBE_API_KEY or SUPABASE_URL secret missing — data jobs skipped"

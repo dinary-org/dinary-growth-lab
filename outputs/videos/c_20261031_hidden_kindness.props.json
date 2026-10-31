@@ -1,0 +1,265 @@
+{
+ "fps": 30,
+ "duration": 46.0,
+ "captions": [
+  {
+   "start": 0.08,
+   "end": 3.021,
+   "text": "매일 밤 열한 시. 삼각김밥"
+  },
+  {
+   "start": 3.021,
+   "end": 3.805,
+   "text": "두 개."
+  },
+  {
+   "start": 4.58,
+   "end": 6.961,
+   "text": "할아버지는 늘 같은 것만"
+  },
+  {
+   "start": 6.961,
+   "end": 7.511,
+   "text": "샀다."
+  },
+  {
+   "start": 9.08,
+   "end": 11.342,
+   "text": "할인 스티커 붙은 것만"
+  },
+  {
+   "start": 11.342,
+   "end": 12.095,
+   "text": "골라서."
+  },
+  {
+   "start": 13.58,
+   "end": 16.062,
+   "text": "봉투도 필요 없다고 했다."
+  },
+  {
+   "start": 18.08,
+   "end": 20.27,
+   "text": "솔직히 좀 짠돌이인 줄"
+  },
+  {
+   "start": 20.27,
+   "end": 21.0,
+   "text": "알았다."
+  },
+  {
+   "start": 22.58,
+   "end": 24.922,
+   "text": "그러다 석 달째 되던 날."
+  },
+  {
+   "start": 27.08,
+   "end": 29.505,
+   "text": "하나를 계산대에 두고 갔다."
+  },
+  {
+   "start": 31.58,
+   "end": 34.212,
+   "text": "야간 알바 학생, 밥은 먹고"
+  },
+  {
+   "start": 34.212,
+   "end": 34.738,
+   "text": "해요."
+  },
+  {
+   "start": 37.08,
+   "end": 39.708,
+   "text": "두 개 중 하나는 처음부터 내"
+  },
+  {
+   "start": 39.708,
+   "end": 40.365,
+   "text": "거였다."
+  },
+  {
+   "start": 42.08,
+   "end": 44.306,
+   "text": "이 이야기는 창작입니다."
+  }
+ ],
+ "audio": [
+  {
+   "src": "c_20261031_hidden_kindness/music.wav",
+   "start": 0,
+   "volume": 0.0446683592150963
+  },
+  {
+   "src": "c_20261031_hidden_kindness/sfx_0.wav",
+   "start": 0.0,
+   "volume": 0.5
+  },
+  {
+   "src": "c_20261031_hidden_kindness/vo_0.wav",
+   "start": 0.08,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_hidden_kindness/vo_1.wav",
+   "start": 4.58,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_hidden_kindness/vo_2.wav",
+   "start": 9.08,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_hidden_kindness/vo_3.wav",
+   "start": 13.58,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_hidden_kindness/vo_4.wav",
+   "start": 18.08,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_hidden_kindness/sfx_5.wav",
+   "start": 22.5,
+   "volume": 0.5
+  },
+  {
+   "src": "c_20261031_hidden_kindness/vo_5.wav",
+   "start": 22.58,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_hidden_kindness/sfx_6.wav",
+   "start": 27.0,
+   "volume": 0.5
+  },
+  {
+   "src": "c_20261031_hidden_kindness/vo_6.wav",
+   "start": 27.08,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_hidden_kindness/sfx_7.wav",
+   "start": 31.5,
+   "volume": 0.5
+  },
+  {
+   "src": "c_20261031_hidden_kindness/vo_7.wav",
+   "start": 31.58,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_hidden_kindness/vo_8.wav",
+   "start": 37.08,
+   "volume": 1.0
+  },
+  {
+   "src": "c_20261031_hidden_kindness/vo_9.wav",
+   "start": 42.08,
+   "volume": 1.0
+  }
+ ],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 4.5,
+   "layout": "clock",
+   "motion": "punchIn",
+   "bg": "linear-gradient(180deg,#14213d,#22335c)",
+   "accent": "#9fd3ff",
+   "kicker": "편의점 야간",
+   "main": "23:00",
+   "sub": "삼각김밥 × 2"
+  },
+  {
+   "start": 4.5,
+   "end": 9.0,
+   "layout": "card",
+   "motion": "slideUp",
+   "bg": "linear-gradient(180deg,#22335c,#2e4472)",
+   "accent": "#3b6fd8",
+   "kicker": "단골 손님",
+   "main": "늘 같은 것만",
+   "sub": "할아버지 한 분"
+  },
+  {
+   "start": 9.0,
+   "end": 13.5,
+   "layout": "bigText",
+   "motion": "punchIn",
+   "bg": "linear-gradient(180deg,#2e4472,#3c4d7a)",
+   "accent": "#ffd400",
+   "kicker": "그것도",
+   "main": "할인 스티커\n붙은 것만"
+  },
+  {
+   "start": 13.5,
+   "end": 18.0,
+   "layout": "bigText",
+   "motion": "slideUp",
+   "bg": "linear-gradient(180deg,#3c4d7a,#4b4f7d)",
+   "accent": "#ffd400",
+   "main": "봉투는\n필요 없다고"
+  },
+  {
+   "start": 18.0,
+   "end": 22.5,
+   "layout": "split",
+   "motion": "slideUp",
+   "bg": "#2b2d42",
+   "accent": "#ff8a5b",
+   "main": "짠돌이?|단골?",
+   "sub": "솔직히 그렇게 생각했다"
+  },
+  {
+   "start": 22.5,
+   "end": 27.0,
+   "layout": "clock",
+   "motion": "drift",
+   "bg": "linear-gradient(180deg,#2b2d42,#3d3552)",
+   "accent": "#c9b6ff",
+   "kicker": "석 달째 되던 날",
+   "main": "23:00"
+  },
+  {
+   "start": 27.0,
+   "end": 31.5,
+   "layout": "bigText",
+   "motion": "shake",
+   "bg": "#5a3d7a",
+   "accent": "#ffffff",
+   "main": "하나를\n두고 갔다"
+  },
+  {
+   "start": 31.5,
+   "end": 37.0,
+   "layout": "card",
+   "motion": "punchIn",
+   "bg": "linear-gradient(180deg,#f6d6a8,#f2b880)",
+   "accent": "#b5651d",
+   "kicker": "삼각김밥 위 메모",
+   "main": "야간 알바 학생,\n밥은 먹고 해요"
+  },
+  {
+   "start": 37.0,
+   "end": 42.0,
+   "layout": "reveal",
+   "motion": "none",
+   "bg": "linear-gradient(180deg,#f2b880,#e89f6b)",
+   "fg": "#2b1a10",
+   "accent": "#7a3e10",
+   "main": "두 개 중 하나는\n처음부터\n내 거였다"
+  },
+  {
+   "start": 42.0,
+   "end": 46.0,
+   "layout": "bigText",
+   "motion": "none",
+   "bg": "#1f2030",
+   "fg": "#d0d0e0",
+   "main": "이 이야기는\n창작입니다",
+   "sub": "오늘 누군가에게 밥 한 끼"
+  }
+ ]
+}

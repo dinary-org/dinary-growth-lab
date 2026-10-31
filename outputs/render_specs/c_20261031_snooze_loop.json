@@ -1,0 +1,19 @@
+{
+  "concept_id": "c_20261031_snooze_loop",
+  "fps": 30,
+  "duration": 24.0,
+  "voice": {"engine": "espeak-ng", "voice": "ko", "rate": 195, "pitch": 45},
+  "music": {"bpm": 112, "key_hz": 196.0, "gain_db": -26},
+  "scenes": [
+    {"start": 0.0, "end": 2.4, "layout": "clock", "motion": "punchIn", "bg": "linear-gradient(180deg,#0f1b3d,#1d2f6b)", "accent": "#ffd400", "kicker": "알람", "main": "07:00", "sub": "오늘은 진짜 일찍 일어난다", "voice_ko": "일곱 시. 알람이 울린다.", "sfx": "tick", "progress": 0.0},
+    {"start": 2.4, "end": 5.0, "layout": "clock", "motion": "slideUp", "bg": "linear-gradient(180deg,#14234d,#243a7d)", "accent": "#ffd400", "kicker": "스누즈 1", "main": "07:01", "sub": "딱 5분만…", "voice_ko": "딱 오 분만 더.", "progress": 0.02},
+    {"start": 5.0, "end": 7.4, "layout": "clock", "motion": "punchIn", "bg": "linear-gradient(180deg,#2b2a5c,#46387d)", "accent": "#ffd400", "kicker": "스누즈 2", "main": "07:06", "sub": "아직 여유 있음", "voice_ko": "괜찮아. 아직 여유 있어.", "sfx": "tick", "progress": 0.12},
+    {"start": 7.4, "end": 9.8, "layout": "clock", "motion": "punchIn", "bg": "linear-gradient(180deg,#45305f,#6a3d7d)", "accent": "#ffd400", "kicker": "스누즈 3", "main": "07:11", "sub": "진짜 마지막", "voice_ko": "오 분만 더. 진짜 마지막.", "sfx": "tick", "progress": 0.22},
+    {"start": 9.8, "end": 12.0, "layout": "clock", "motion": "drift", "bg": "linear-gradient(180deg,#1a1a2a,#2c2440)", "fg": "#9a93b8", "accent": "#7c7399", "kicker": "zzz", "main": "07:16", "sub": "(알람 못 들음)", "voice_ko": "이번엔 알람도 못 들었다.", "progress": 0.32},
+    {"start": 12.0, "end": 14.6, "layout": "clock", "motion": "shake", "bg": "#d7261e", "accent": "#ffffff", "kicker": "잠깐만", "main": "07:52", "sub": "?!?!", "voice_ko": "잠깐. 일곱 시 오십이 분?", "sfx": "hit", "progress": 0.87},
+    {"start": 14.6, "end": 17.6, "layout": "split", "motion": "slideUp", "bg": "#1f2030", "accent": "#ff5a36", "main": "양치하면서|세수하면서", "sub": "옷까지 입기", "voice_ko": "양치하면서 세수하고 옷까지.", "sfx": "whoosh", "progress": 0.95},
+    {"start": 17.6, "end": 20.4, "layout": "card", "motion": "slideUp", "bg": "linear-gradient(180deg,#ff8a3d,#ff5a36)", "accent": "#ff5a36", "kicker": "오늘의 교훈", "main": "내일은\n진짜 일찍 잔다", "voice_ko": "교훈. 내일은 진짜 일찍 잔다.", "sfx": "ding", "progress": 1.0},
+    {"start": 20.4, "end": 22.6, "layout": "reveal", "motion": "none", "bg": "linear-gradient(180deg,#1a2352,#2b2f66)", "accent": "#7fd1ff", "kicker": "그날 밤", "main": "23:58", "sub": "쇼츠 하나만 더…", "voice_ko": "그날 밤 열한 시 오십팔 분."},
+    {"start": 22.6, "end": 24.0, "layout": "clock", "motion": "punchIn", "bg": "linear-gradient(180deg,#0f1b3d,#1d2f6b)", "accent": "#ffd400", "kicker": "알람", "main": "07:00", "sub": "오늘은 진짜 일찍 일어난다", "voice_ko": "일곱 시.", "sfx": "tick", "progress": 0.0}
+  ]
+}

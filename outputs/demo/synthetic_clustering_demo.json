@@ -1,0 +1,152 @@
+{
+  "_label": "SYNTHETIC MECHANISM DEMO — not research data",
+  "runs": [
+    {
+      "run": "run1",
+      "n_videos": 34,
+      "topic": {
+        "method": "hdbscan",
+        "silhouette": 0.2047332292780593,
+        "ari_vs_hidden_topic": 1.0,
+        "ari_vs_hidden_format": 0.02,
+        "clusters": [
+          {
+            "id": "t0",
+            "label": "뛼뙨 · 캰띆덟 · 뷬즡",
+            "size": 12,
+            "lineage": "emerged",
+            "from": []
+          },
+          {
+            "id": "t1",
+            "label": "쳴뾨 · 뒬킑촾 · 긆팆뱕",
+            "size": 12,
+            "lineage": "emerged",
+            "from": []
+          },
+          {
+            "id": "t2",
+            "label": "쏾뢸 · 꺚긆웢 · 톹톹",
+            "size": 10,
+            "lineage": "emerged",
+            "from": []
+          }
+        ],
+        "dissolved": []
+      },
+      "format": {
+        "method": "hdbscan",
+        "silhouette": 0.3577437713777223,
+        "ari_vs_hidden_topic": 0.043,
+        "ari_vs_hidden_format": 0.764,
+        "clusters": [
+          {
+            "id": "f_noise",
+            "label": "unclustered / noise",
+            "size": 1,
+            "lineage": "noise",
+            "from": []
+          },
+          {
+            "id": "f0",
+            "label": "high first_text_s, high speech_ratio, low cuts_per_10s",
+            "size": 13,
+            "lineage": "emerged",
+            "from": []
+          },
+          {
+            "id": "f1",
+            "label": "high cuts_per_10s, high text_on_screen_ratio, low speech_ratio",
+            "size": 4,
+            "lineage": "emerged",
+            "from": []
+          },
+          {
+            "id": "f2",
+            "label": "high loop_similarity, low first_text_s, high duration_s",
+            "size": 11,
+            "lineage": "emerged",
+            "from": []
+          },
+          {
+            "id": "f3",
+            "label": "low duration_s, high loop_similarity, low title_len",
+            "size": 5,
+            "lineage": "emerged",
+            "from": []
+          }
+        ],
+        "dissolved": []
+      }
+    },
+    {
+      "run": "run2",
+      "n_videos": 46,
+      "topic": {
+        "method": "hdbscan",
+        "silhouette": 0.1996476389937694,
+        "ari_vs_hidden_topic": 1.0,
+        "ari_vs_hidden_format": -0.0,
+        "clusters": [
+          {
+            "id": "t0",
+            "label": "뛼뙨 · 캰띆덟 · 뷬즡",
+            "size": 18,
+            "lineage": "persisted",
+            "from": [
+              "t0"
+            ]
+          },
+          {
+            "id": "t1",
+            "label": "궗귡 · 긆팆뱕 · 쳴뾨",
+            "size": 18,
+            "lineage": "persisted",
+            "from": [
+              "t1"
+            ]
+          },
+          {
+            "id": "t2",
+            "label": "밋슱궗 · 꽓캋볩 · 쾎녙",
+            "size": 10,
+            "lineage": "emerged",
+            "from": []
+          }
+        ],
+        "dissolved": [
+          "t2"
+        ]
+      },
+      "format": {
+        "method": "hdbscan",
+        "silhouette": 0.42435541153541834,
+        "ari_vs_hidden_topic": 0.019,
+        "ari_vs_hidden_format": 0.688,
+        "clusters": [
+          {
+            "id": "f0",
+            "label": "low first_text_s, low speech_ratio, high cuts_per_10s",
+            "size": 27,
+            "lineage": "merged",
+            "from": [
+              "f1",
+              "f2",
+              "f3"
+            ]
+          },
+          {
+            "id": "f1",
+            "label": "high first_text_s, high speech_ratio, low cuts_per_10s",
+            "size": 19,
+            "lineage": "persisted",
+            "from": [
+              "f0"
+            ]
+          }
+        ],
+        "dissolved": []
+      }
+    }
+  ]
+}

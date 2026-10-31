@@ -1,0 +1,25 @@
+{
+  "_about": "SECONDARY, UNVERIFIED evidence. Collected 2026-10-31 via the session's web-search tool because platform APIs and platform/blog hosts were blocked by the session network policy (see reports/2026-10-31-milestone-1.md). Each claim is the search engine's summary of the linked page; the page itself could NOT be fetched for verification. No view counts here are platform-measured. Use only to seed provisional hypotheses; replace with measured evidence once YOUTUBE_API_KEY / APIFY_TOKEN are available.",
+  "retrieved_at": "2026-10-31T05:20:00Z",
+  "method": "WebSearch (standard), 4 queries: 'youtube.com/shorts 2026 viral', '유튜브 쇼츠 조회수 급상승 2026년 10월', 'instagram.com/reel trending October 2026', 'site:youtube.com/shorts 쇼츠'",
+  "items": [
+    {"id": "sec_later_2026_10", "url": "https://later.com/blog/instagram-reels-trends", "publisher": "Later (social media tool vendor)",
+     "claim": "October 2026 Reels trend roundup lists a 'spinning ceiling fan' outfit-swap transition and a 'vlog timestamps' format (dated October 23).",
+     "type": "format observation by third party", "verified": false, "fetch_status": "host blocked by session network policy"},
+    {"id": "sec_ig_shares_saves", "url": "https://www.inro.social/blog/how-instagram-reels-work-2025", "publisher": "third-party guide (one of several in the result set)",
+     "claim": "An October 2026 guide states Instagram trend distribution rewards DM shares and saves more than likes.",
+     "type": "marketing opinion", "verified": false, "fetch_status": "not fetched"},
+    {"id": "sec_shorts_loops_length", "url": "https://fliki.ai/blog/how-viral-youtube-shorts", "publisher": "third-party guides (fliki.ai, clipspeed.ai, toptal.com in the same result set)",
+     "claim": "Guides agree retention and rewatch loops matter more than raw length; one cites a report that ~half of viral Shorts are 20-40 s long. Source of the statistic not individually verified.",
+     "type": "vendor claim", "verified": false, "fetch_status": "not fetched"},
+    {"id": "sec_ampm_collab_asia", "url": "https://inside.ampm.co.kr/insight/1406", "publisher": "AMPM Inside (Korean agency)",
+     "claim": "Collab Asia analysis of ~1,500 channels: 88.2% of views came from Shorts and ~70% of channel visitors first arrived via Shorts.",
+     "type": "single-company internal analysis (Korea)", "verified": false, "fetch_status": "not fetched"},
+    {"id": "sec_yt_blog_ko_scale", "url": "https://blog.youtube/intl/ko-kr/news-and-events/2021_07_shorts-goes-globa/", "publisher": "YouTube official Korean blog",
+     "claim": "Shorts are watched by 2B+ logged-in users monthly with ~70B daily views worldwide (figure as summarised; date of figure not confirmed).",
+     "type": "platform statement", "verified": false, "fetch_status": "not fetched"},
+    {"id": "sec_anijam_formats", "url": "https://www.anijam.ai/blog/youtube-shorts-trends/", "publisher": "anijam.ai (AI video vendor)",
+     "claim": "A July 2026 roundup lists formats from 'viral animation memes' to 'AI avatars' as trending on Shorts.",
+     "type": "vendor claim", "verified": false, "fetch_status": "host blocked by session network policy"}
+  ]
+}
